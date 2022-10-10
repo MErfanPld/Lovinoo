@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main class="main-content">
+
+    <div class="container">
+
+        <!-- begin::page-header -->
+        <div class="page-header">
+            <h1 class="text-center"> درباره ما</h1>
+            <nav aria-label="breadcrumb">
+                <ol><a class="btn btn-danger" href="{% url "config:about_create" %}">تغییر متن درباره ما</a></ol>
+            </nav>
+        </div>
+        <!-- end::page-header -->
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <h5></h5>
+                <hr>
+                <div class="col-md-12">
+                    <div class="card bg-primary col-md-12 text-center text-center">
+                        <blockquote class="blockquote mb-0 card-body">
+                            {% if about_us.description %}
+                                <h1>{{ about_us.description | safe | linebreaks }}</h1>
+                            {% else %}
+                                <h1>شما متنی برای بخش درباره ما در نظز نگرفتید</h1>
+                            {% endif %}
+                        </blockquote>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</main>
+<!-- end::main content -->
+{% endblock content %}

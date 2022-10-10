@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+    <main class="main-content">
+        <div class="container">
+
+            <!-- begin::page-header -->
+            <div class="page-header">
+                <h1 class="text-center">لیست پیام های دریافتی</h1>
+            </div>
+            <!-- end::page-header -->
+
+            <div class="row">
+                <div class="col-md-12">
+
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-title">پیام های دریافتی</h6>
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">ایمیل</th>
+                                        <th scope="col">عنوان</th>
+                                        <th scope="col">تاریخ</th>
+                                        <th scope="col">جزییات</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for  contact  in  contact_list %}
+                                        <tr>
+                                            <th scope="row">{{ forloop.counter }}</th>
+                                            <td>{{ contact.email }}</td>
+                                            <td>{{ contact.title }}</td>
+                                            <td>{{ contact.created }}</td>
+                                            <td><a href="{% url "config:contact_detail" contact.pk %}">جزییات</a></td>
+                                        </tr>
+                                    {% empty %}
+                                        <h1 class="text-center text-danger">پیامی دربافت نشده</h1>
+                                    {% endfor %}
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+{% endblock content %}
+
+

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+<!-- end::header -->
+{% block content %}
+    <!-- begin::main-content -->
+    <div class="main-content">
+
+        <div class="container">
+
+            <!-- begin::page-header -->
+            <div class="page-header">
+                <h1 class="text-success text-center">قوانین برنامه</h1>
+            </div>
+            <!-- end::page-header -->
+
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <form method="post" action="">
+                                        {% csrf_token %}
+                                        {{ form.media }}
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">{{ form.title.label }}</label>
+                                            {{ form.title }}
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">{{ form.description.label }}</label>
+                                            {{ form.description }}
+                                        </div>
+
+                                        <button type="submit" class="btn btn-primary">ثبت</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- end::main-content -->
+{% endblock content %}
+<!-- begin::footer -->
+

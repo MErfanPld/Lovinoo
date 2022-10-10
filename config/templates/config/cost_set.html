@@ -1,0 +1,47 @@
+{% extends 'base1.html' %}
+<!-- end::header -->
+{% block content %}
+    <!-- begin::main-content -->
+    <div class="main-content">
+
+        <div class="container">
+
+            <!-- begin::page-header -->
+            <div class="page-header">
+                <h1 class="text-success text-center">اعمال نرخه آگهی</h1>
+            </div>
+            <!-- end::page-header -->
+
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <form method="post" action="">
+                                        {% csrf_token %}
+                                        {% for field in form.visible_fields %}
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">{{ field.label }}</label>
+                                                {{ field }}
+                                            </div>
+                                        {% endfor %}
+                                        <button type="submit" class="btn btn-primary">ثبت</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- end::main-content -->
+{% endblock content %}
+<!-- begin::footer -->
+

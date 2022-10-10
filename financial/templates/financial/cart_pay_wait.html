@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+    <main class="main-content">
+        <div class="container">
+
+            <!-- begin::page-header -->
+            <div class="page-header">
+                <h1 class="text-center">لیست پرداختی های کارت به کارت در انتظار تایید </h1>
+            </div>
+            <!-- end::page-header -->
+
+            <div class="row">
+                <div class="col-md-12">
+
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-title"></h6>
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">کاربر</th>
+                                        <th scope="col">نام</th>
+                                        <th scope="col">شماره تراکنش</th>
+                                        <th scope="col">تصویر</th>
+                                        <th scope="col">جزییات</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for pay  in  object_list %}
+                                        <tr>
+                                            <th scope="row">{{ forloop.counter }}</th>
+                                            <td>{{ pay.user }}</td>
+                                            <td>{{ pay.name }}</td>
+                                            <td>{{ pay.tracing_number }}</td>
+                                            <td><a href="{{ pay.image.url }}"><img src="{{ pay.image.url }}"></a></td>
+                                            <td><a href="{% url "financial:pay_history" %}" class="btn btn-info">نمایش
+                                                جزییات</a></td>
+                                        </tr>
+                                    {% empty %}
+                                        <h1 class="text-center text-danger">کارت به کارتی ثبت نشده</h1>
+                                    {% endfor %}
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+{% endblock content %}
+
+

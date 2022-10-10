@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block content %}
+    <!-- begin::main-content -->
+    <main class="main-content">
+
+        <div class="container">
+
+            <!-- begin::page-header -->
+            <div class="page-header">
+                <h4>کاربر {{ user }}</h4>
+                <nav aria-label="breadcrumb">
+                    <input
+                            action="action"
+                            onclick="window.history.go(-1); return false;"
+                            type="submit"
+                            value="بازگشت به صفحه قبل"
+                            class="btn btn-danger"
+                    />
+                </nav>
+            </div>
+
+
+            <!-- end::page-header -->
+
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div class="card-group">
+                        <div class="card">
+                            <div class="card-body">
+                                <h1 class="card-title text-center">{{ user.phone_number }}</h1>
+                                <ul>
+                                    <li><h1>نام:{{ user.profile.first_name }}</h1></li>
+                                    <li><h1>نام خانوادگی:{{ user.profile.first_name }}</h1></li>
+                                    <li><h1>استان:{{ user.profile.province }}</h1></li>
+                                    <li><h1>شهر:{{ user.profile.city }}</h1></li>
+                                </ul>
+                                <p class="card-text"><h1>bio:</h1>:<br><h3>{{user.profile.bio |linebreaksbr }}</h3></p>
+                                <p class="card-text">
+                                    <a href="{% url "accounts:delete"  user.pk%}" class="btn btn-danger">حذف کاربر</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <h1 class="text-center text-info">تصاویر پروفایل</h1>
+                    <div class="card-columns">
+                        {% for image in user.images.all %}
+                            <div class="card">
+                                <a href="{{ image.image.url }}">
+                                    <img width="50px" height="150px" src="{{ image.image.url }}" class="card-img-top"
+                                         alt="image">
+                                </a>
+                            </div>
+                        {% empty %}
+                            <h1 class="text-center">تصویری برای نمایش وجود ندارد</h1>
+                        {% endfor %}
+
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+    <!-- end::main-content -->
+{% endblock content %}

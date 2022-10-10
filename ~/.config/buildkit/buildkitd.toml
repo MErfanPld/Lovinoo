@@ -1,0 +1,5 @@
+
+[gc]
+enabled=true
+[registry."docker.io"]
+mirrors = ["hub.hamdocker.ir"]

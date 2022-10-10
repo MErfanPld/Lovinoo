@@ -1,0 +1,54 @@
+{% extends "base1.html" %}
+{% load humanize %}
+{% block content %}
+    <main class="main-content">
+
+        <div class="container">
+
+            <!-- begin::page-header -->
+            <div class="page-header">
+                <h1 class="text-center"> نرخ های آگهی</h1>
+                <nav aria-label="breadcrumb">
+                    <ol><a class="btn btn-danger" href="{% url "config:cost_set" %}">تعییر نرخ آگهی</a></ol>
+                </nav>
+            </div>
+            <!-- end::page-header -->
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h5></h5>
+                    <hr>
+                    <div class="card-columns">
+                        <div class="card bg-primary text-center p-3">
+                            <blockquote class="blockquote mb-0 card-body">
+                                <h1> در شهرهای بزرگ</h1>
+                                {{ info.capital | intcomma }}
+                                تومان
+
+                            </blockquote>
+                        </div>
+                        <div class="card bg-primary text-center p-3">
+                            <blockquote class="blockquote mb-0 card-body">
+                                <h1> در سایز شهرها</h1>
+                                {{ info.others | intcomma }}
+                                تومان
+                            </blockquote>
+                        </div>
+                        <div class="card bg-primary text-center p-3">
+                            <blockquote class="blockquote mb-0 card-body">
+                                <h1> ویژه</h1>
+                                {{ info.special | intcomma }}
+                                تومان
+
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+    <!-- end::main content -->
+{% endblock content %}

@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+    <main class="main-content">
+        <div class="container">
+
+            <!-- begin::page-header -->
+            <div class="page-header">
+                <h1 class="text-center">لیست پرداختی های کاربران</h1>
+            </div>
+            <!-- end::page-header -->
+
+            <div class="row">
+                <div class="col-md-12">
+
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-title">کاربران ادمین</h6>
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">کاربر</th>
+                                        <th scope="col">اشتراک</th>
+                                        <th scope="col">مبلغ</th>
+                                        <th scope="col">تاریخ</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for pay in payhistory_list %}
+                                        <tr>
+                                            <th scope="row">{{ forloop.counter }}</th>
+                                            <td>{{ pay.user }}</td>
+                                            <td>{{ pay.tariff }}</td>
+                                            <td>{{ pay.price }}</td>
+                                            <td>{{ pay.date }}</td>
+                                        </tr>
+                                    {% empty %}
+                                        <h1 class="text-center text-danger">پرداختی در سیستم ثبت نشده</h1>
+                                    {% endfor %}
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+{% endblock content %}
+
+

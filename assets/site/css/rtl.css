@@ -1,0 +1,555 @@
+/*-----------------------------------------------------------------------------------
+
+    Template Name: Zimed - App Landing Page HTML Template
+    Description: This is html5 template
+    Author: Melika Khaliliyan
+    Website:https://aliniyazi.info/
+    Website:https://netita.ir/
+    Version: 1.0
+
+-----------------------------------------------------------------------------------*/
+
+
+@font-face {
+    font-family: 'IS';
+    src: url('../fonts/fa/ISLight.eot');
+    src: url('../fonts/fa/ISLight.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/fa/ISLight.woff2') format('woff2'),
+    url('../fonts/fa/ISLight.woff') format('woff'),
+    url('../fonts/fa/ISLight.ttf') format('truetype'),
+    url('../fonts/fa/ISLight.svg#IS-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IS';
+    src: url('../fonts/fa/ISMedium.eot');
+    src: url('../fonts/fa/ISMedium.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/fa/ISMedium.woff2') format('woff2'),
+    url('../fonts/fa/ISMedium.woff') format('woff'),
+    url('../fonts/fa/ISMedium.ttf') format('truetype'),
+    url('../fonts/fa/ISMedium.svg#IS-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IS';
+    src: url('../fonts/fa/IS.eot');
+    src: url('../fonts/fa/IS.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/fa/IS.woff2') format('woff2'),
+    url('../fonts/fa/IS.woff') format('woff'),
+    url('../fonts/fa/IS.ttf') format('truetype'),
+    url('../fonts/fa/IS.svg#IS') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IS';
+    src: url('../fonts/fa/ISUltraLight.eot');
+    src: url('../fonts/fa/ISUltraLight.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/fa/ISUltraLight.woff2') format('woff2'),
+    url('../fonts/fa/ISUltraLight.woff') format('woff'),
+    url('../fonts/fa/ISUltraLight.ttf') format('truetype'),
+    url('../fonts/fa/ISUltraLight.svg#IS-UltraLight') format('svg');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IS';
+    src: url('../fonts/fa/ISBold.eot');
+    src: url('../fonts/fa/ISBold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/fa/ISBold.woff2') format('woff2'),
+    url('../fonts/fa/ISBold.woff') format('woff'),
+    url('../fonts/fa/ISBold.ttf') format('truetype'),
+    url('../fonts/fa/ISBold.svg#IS-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ISDN';
+    src: url('../fonts/fa/ISDN.eot');
+    src: url('../fonts/fa/ISDN.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/fa/ISDN.woff2') format('woff2'),
+    url('../fonts/fa/ISDN.woff') format('woff'),
+    url('../fonts/fa/ISDN.ttf') format('truetype'),
+    url('../fonts/fa/ISDN.svg#IRANSansDN') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ISNU';
+    src: url('../fonts/fa/ISNU.eot');
+    src: url('../fonts/fa/ISNU.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/fa/ISNU.woff2') format('woff2'),
+    url('../fonts/fa/ISNU.woff') format('woff'),
+    url('../fonts/fa/ISNU.ttf') format('truetype'),
+    url('../fonts/fa/ISNU.svg#ISNU') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IY';
+    src: url('../fonts/fa/IY.eot');
+    src: url('../fonts/fa/IY.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/fa/IY.woff2') format('woff2'),
+    url('../fonts/fa/IY.woff') format('woff'),
+    url('../fonts/fa/IY.ttf') format('truetype'),
+    url('../fonts/fa/IY.svg#IY') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IY';
+    src: url('../fonts/fa/IY-Light.eot');
+    src: url('../fonts/fa/IY-Light.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/fa/IY-Light.woff2') format('woff2'),
+    url('../fonts/fa/IY-Light.woff') format('woff'),
+    url('../fonts/fa/IY-Light.ttf') format('truetype'),
+    url('../fonts/fa/IY-Light.svg#IY-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IY';
+    src: url('../fonts/fa/IY-Bold.eot');
+    src: url('../fonts/fa/IY-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/fa/IY-Bold.woff2') format('woff2'),
+    url('../fonts/fa/IY-Bold.woff') format('woff'),
+    url('../fonts/fa/IY-Bold.ttf') format('truetype'),
+    url('../fonts/fa/IY-Bold.svg#IY-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IY';
+    src: url('../fonts/fa/IY-Medium.eot');
+    src: url('../fonts/fa/IY-Medium.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/fa/IY-Medium.woff2') format('woff2'),
+    url('../fonts/fa/IY-Medium.woff') format('woff'),
+    url('../fonts/fa/IY-Medium.ttf') format('truetype'),
+    url('../fonts/fa/IY-Medium.svg#IY-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Av';
+    src: url('../fonts/fa/Av.eot');
+    src: url('../fonts/fa/Av.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/fa/Av.woff2') format('woff2'),
+    url('../fonts/fa/Av.woff') format('woff'),
+    url('../fonts/fa/Av.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+/*Fonts*/
+/*Generals*/
+*{
+    letter-spacing: 0!important;
+
+}
+body{
+    direction: rtl;
+    text-align: right;
+
+}
+/*Generals*/
+/*Header*/
+.main-nav__main-navigation .main-nav__navigation-box>li+li {
+    margin-left: initial;
+    margin-right: 45px;
+}
+.banner-one__moc {
+    right: initial;
+    left: -30px;
+}
+.main-nav__main-navigation .main-nav__navigation-box>li>ul {
+    left: initial;
+    right: 0;
+}
+.banner-one__shape-2 {
+    left: initial;
+    right: 7%;
+}
+.banner-one__shape-1 {
+    left: initial;
+    right: 0;
+}
+.banner-one__shape-moc-1 {
+    right: initial;
+    left: -9%;
+}
+.banner-one__shape-4 {
+    right: initial;
+    left: 45%;
+}
+.banner-one__shape-5 {
+    left: initial;
+    right: 6%;
+}
+.banner-one__shape-7 {
+    right: initial;
+    left: 6%;
+}
+.banner-one__shape-6 {
+    right: initial;
+    left: 30%;
+}
+.banner-one::before {
+    left: initial;
+    right: 0;
+    clip-path: polygon(28.5% 0, 0% 100%, 100% 100%);
+}
+.banner-one__content .banner-one__tag-line a {
+    margin-left: initial;
+    margin-right: 25px;
+
+}
+.banner-one__content .banner-one__tag-line {
+    padding-left: initial;
+    padding-right: 30px;
+}
+/*Header*/
+/*Style*/
+.scroll-to-top {
+    right: initial;
+    left: 40px;
+}
+.cta-three__moc {
+    left: initial;
+    right: -47px;
+}
+.cta-three__shape-2 {
+    right: initial;
+    left: 0;
+}
+.cta-three__shape-1 {
+    left: initial;
+    right: -1%;
+}
+.cta-three__content {
+    padding-left: initial;
+    padding-right: 70px;
+}
+.cta-three__box-content {
+    padding-left: initial;
+    padding-right: 25px;
+}
+.cta-three__shape-3 {
+    right: initial;
+    left: 0;
+}
+.cta-two__shape-1 {
+    left: initial;
+    right: 7%;
+}
+.cta-two__shape-2 {
+    right: initial;
+    left: 9%;
+}
+.cta-two__shape-3 {
+    right: initial;
+    left: 3%;
+}
+.cta-two__moc {
+    right: initial;
+    left: -30px;
+}
+.funfact-one__shape-1 {
+    left:initial;
+    right: 0;
+}
+.funfact-one__shape-2 {
+    left: initial;
+    right: 14%;
+}
+.funfact-one__shape-3 {
+    right: initial;
+    left: 4%;
+}
+.funfact-one__single p::before {
+    margin-right: initial;
+    margin-left: 10px;
+}
+.pricing-one ul.switch-toggler-list,.owl-carousel .owl-stage-outer,.testimonials__one .bx-wrapper{
+    direction: ltr;
+}.
+ .pricing-one__list li i {
+     margin-right: initial;
+     margin-left: 5px;
+ }
+.list-unstyled {
+    padding-left: initial;
+    padding-right: 0;
+}
+.app-shot__shape-1 {
+    right: initial;
+    left: -231.5px;
+}
+.app-shot__shape-2 {
+    left:initial;
+    right:  12%;
+}
+.testimonials__one-shape-1 {
+    left: initial;
+    right: 2%;
+}
+.testimonials__one-shape-2 {
+    right: initial;
+    left: 6%;
+}
+.testimonials__one__single{
+    direction: rtl;
+}
+.testimonials__one .bx-wrapper .bx-controls-direction {
+    right: initial;
+    left: 0;
+}
+.testimonials__one .testimonials__one__single p{
+    font-size: 18px;
+    text-align: justify;
+}
+.faq-one__shape-2 {
+    right: initial;
+    left: 0;
+}
+.faq-one__shape-1 {
+    left: initial;
+    right: 4%;
+}
+.faq-one__shape-3 {
+    left: initial;
+    right: 4%;
+}
+.faq-accrodion .accrodion .accrodion-title:before ,.faq-accrodion .accrodion .accrodion-title::after{
+    right: initial;
+    left: 60px;
+
+}
+.faq-accrodion .accrodion::after {
+    left:initial;
+    right: 0;
+    transform: translateX(50%);
+}
+.faq-accrodion .accrodion .accrodion-content .inner {
+    padding-right:60px;
+    padding-left: 155px;
+}
+.blog-one__shape-1 {
+    right: initial;
+    left: 8%;
+}
+.blog-one__meta li+li {
+    margin-left: initial;
+    margin-right: 10px;
+}
+.blog-one__meta li a i {
+    margin-right: initial;
+    margin-left: 3px;
+}
+.blog-one__link {
+    right: initial;
+    left: 10px;
+}
+.blog-one__link .zimed-icon-right-arrow:before {
+    content: "\e904";
+}
+.contact-one__shape-2 {
+    right: initial;
+    left: 2%;
+}
+@media (min-width: 992px){
+    .contact-one__content {
+        padding-right: initial;
+        padding-left: 30px;
+    }}
+.contact-one__shape-3 {
+    right: initial;
+    left: -231.5px;
+}
+.contact-one__shape-1 {
+    left: initial;
+    right: 0;
+}
+.contact-one__form input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]), .contact-one__form textarea {
+    font-family: 'IY';
+    padding-left: initial;
+    padding-right: 30px;
+}
+.dropdown-item{
+    text-align: right;
+}
+.contact-one__infos-icon i {
+    margin-right: initial;
+    margin-left: 20px;
+}
+@media (min-width: 992px) {
+    .footer-widget__about {
+        padding-right: initial;
+        padding-left: 44px;
+    }
+}
+@media (min-width: 992px) {
+    .footer-widget__links-wrap {
+        padding-right:initial;
+        padding-left: 70px;
+    }
+}
+.site-footer__shape-1 {
+    left: initial;
+    right: 3%;
+}
+.site-footer__shape-2 {
+    right: initial;
+    left: 4%;
+}
+.footer-widget__links ul li a::before {
+    content: '\f100';
+    left: initial;
+    right: 0;
+    transform: translateY(-40%) translateX(20px);
+}
+.footer-widget__links ul li a:hover {
+    transform: translateX(-20px);
+}
+.site-footer__social a+a {
+    margin-left: initial;
+    margin-right: 10px;
+}
+.mobile-nav__container li.dropdown ul {
+    padding-left: initial;
+    padding-right: 0.5em;
+}
+@media (max-width: 991px) {
+    .banner-one__moc {
+        left: auto;
+    }
+}
+@media (max-width: 991px){
+    .cta-three__moc {
+
+        right: auto;
+    }}
+@media (max-width: 1199px) {
+    .cta-three__content {
+        padding-right: 0;
+    }
+}
+.cta-three__box::before {
+    left: initial;
+    right: 37.5px;
+}
+@media (max-width: 991px) {
+    .cta-two__moc {
+
+        left: auto;
+    }
+}
+@media (max-width: 991px) {
+    .faq-accrodion .accrodion .accrodion-title::before, .faq-accrodion .accrodion .accrodion-title::after {
+
+        right: initial!important;
+        left: 30px!important;
+    }
+}
+@media (max-width: 425px){
+.faq-accrodion .accrodion .accrodion-title {
+    padding-left:80px!important;
+    padding-right: 30px!important;
+} }
+@media (max-width: 1199px){
+    .footer-widget__links-wrap {
+        padding-right: initial!important;
+        padding-left: 40px!important;
+    }}
+.page-header::before {
+    left: initial;
+    right: 0;
+    clip-path: polygon(28.5% 0, 0% 100%, 100% 100%);
+}
+.sidebar__post-single>img {
+    left: initial;
+    right: 0;
+}
+.sidebar__post-single {
+    padding-left: initial;
+    padding-right: 80px;
+}
+.sidebar__search-form input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]) {
+    padding-left: initial;
+    padding-right: 50px;
+}
+.sidebar__search-form button[type=submit] {
+    right: initial;
+    left: 50px;
+}
+.blog-details__tags a {
+    margin-left: initial;
+    margin-right: 5px;
+}
+.author-one__content {
+    padding-left: initial;
+    padding-right: 40px;
+}
+.comment-one__content {
+    padding-left: 105px;
+    padding-right: 40px;
+}
+.comment-one__btn {
+    right:initial;
+    left: 0;
+}
+.side-menu__block {
+    left: initial;
+    right: 0;
+    -webkit-transform: scale(0, 1);
+    transform: scale(0, 1);
+    -webkit-transform-origin: right center;
+    transform-origin: right center;
+}
+.side-menu__block.active {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+}
+.side-menu__social a+a {
+    margin-left: initial;
+    margin-right: 10px;
+}
+.post-pagination a+a {
+    margin-left: initial;
+    margin-right: 15px;
+}
+/*Style*/
+/*Typography*/
+body ,.main-nav__main-navigation .main-nav__navigation-box>li>a,.main-nav__main-navigation .main-nav__navigation-box>li>ul,.main-nav__main-navigation .main-nav__navigation-box>li ul>li>a,.sidebar__post-single h3,.mobile-nav__container li a{
+    font-family: 'IS';
+}
+.header__btn,.banner-one__btn,.cta-three__btn,.thm-btn,.site-footer__bottom .inner-container>p,.cta-three__box-content h3{
+    font-family: 'ISDN';
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Av';
+}
+.contact-one__form .bootstrap-select .dropdown-toggle .filter-option,.bootstrap-select .dropdown-menu.inner{
+    font-family: 'IY';
+}
+.funfact-one__single h3,.funfact-one__single p,.pricing-one__single h3,.faq-accrodion .accrodion::after ,.blog-one__meta li a,.comment-one__date,.comment-one__title, .comment-form__title,.post-pagination,.cta-one__content p,.footer-widget p a,.side-menu__content p+p,.contact-one__infos-single p a{
+    font-family: 'ISNU';
+}
+.cta-two__content>p ,.cta-three__box-content p,.testimonials__one .testimonials__one__single p,.faq-accrodion .accrodion .accrodion-content p,.contact-one__infos-single p,.blog-details__content p,.author-one__content p,.comment-one__content p,.footer-widget p,.sidebar__tags-list a,.sidebar__cat-list li a,.sidebar__post-single h3,.blog-details__content .blog-one__meta li a,.footer-widget__links ul li a,.contact-one__form label.error,.mobile-nav__container li a,.side-menu__content p{
+    font-size: 16px;
+    font-weight: 400;
+    text-align: justify;
+}
+/*Typography*/

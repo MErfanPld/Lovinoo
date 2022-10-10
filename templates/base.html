@@ -1,0 +1,135 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>قالب Protable - قالب پنل مدیریت</title>
+
+
+    <!-- Css -->
+
+    <!-- Javascript -->
+
+    <!-- Favicon -->
+        <!-- Favicon -->
+
+    <!-- Plugin styles -->
+
+
+    <!-- Prism -->
+    <link rel="stylesheet" href="{%  static 'vendors/prism/prism.css' %}" type="text/css">
+
+    <!-- App styles -->
+
+    <link rel="shortcut icon" href="{% static 'media/image/favicon.png' %}">
+
+    <!-- Plugin styles -->
+    <link rel="stylesheet" href="{% static 'vendors/bundle.css' %}" type="text/css">
+
+    <!-- Datepicker -->
+    <link rel="stylesheet" href="{% static 'datepicker/daterangepicker.css' %}">
+
+    <!-- Slick -->
+    <link rel="stylesheet" href="{% static 'vendors/slick/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/slick/slick-theme.css' %}">
+
+    <!-- Vmap -->
+    <link rel="stylesheet" href="{% static 'vendors/vmap/jqvmap.min.css' %}">
+
+    <!-- App styles -->
+    <link rel="stylesheet" href="{% static 'css/app.css' %}" type="text/css">
+    {% block style %}
+    {% endblock style %}
+</head>
+<body>
+<!-- begin::preloader-->
+
+{#<div class="preloader">#}
+{#    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="50px" height="50px" viewbox="0 0 128 128" xml:space="preserve">#}
+{#        <rect x="0" y="0" width="100%" height="100%" fill="#FFFFFF" />#}
+{#        <g>#}
+{#            <path d="M75.4 126.63a11.43 11.43 0 0 1-2.1-22.65 40.9 40.9 0 0 0 30.5-30.6 11.4 11.4 0 1 1 22.27 4.87h.02a63.77 63.77 0 0 1-47.8 48.05v-.02a11.38 11.38 0 0 1-2.93.37z" fill="#000000" fill-opacity="1" />#}
+{#        </g>#}
+{#    </svg>#}
+{#</div>#}
+
+{% include 'navbar.html' %}
+<div id="main">
+
+    {% include 'header.html' %}
+    {% if messages %}
+        {% for message in messages %}
+            <p class="alert alert-{{ message.tags }}">{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+    {% block content %}
+    {% endblock content %}
+    <!-- begin::footer -->
+    <footer>
+        <div class="container">
+            <div>ارائه شده در وب‌سایت <a href="https://www.rtl-theme.com" target="_blank">راست‌چین</a></div>
+            <div>
+                <nav class="nav">
+                    <a href="#" class="nav-link">مجوزها</a>
+                    <a href="#" class="nav-link">تغییرات</a>
+                    <a href="#" class="nav-link">راهنما</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+    <!-- end::footer -->
+
+</div>
+
+<!-- Plugin scripts -->
+<script src="{% static 'vendors/bundle.js' %}"></script>
+
+<!-- Chartjs -->
+<script src="{% static 'vendors/charts/chartjs/chart.min.js' %}"></script>
+
+<!-- Apex chart -->
+<script src="{% static 'vendors/charts/apex/apexcharts.min.js' %}"></script>
+
+<!-- Circle progress -->
+<script src="{% static 'vendors/circle-progress/circle-progress.min.js' %}"></script>
+
+<!-- Peity -->
+<script src="{% static 'vendors/charts/peity/jquery.peity.min.js' %}"></script>
+<script src="{% static 'js/examples/charts/peity.js' %}"></script>
+
+<!-- Datepicker -->
+<script src="{% static 'vendors/datepicker/daterangepicker.js' %}"></script>
+
+<!-- Slick -->
+<script src="{% static 'vendors/slick/slick.min' %}.js"></script>
+
+<!-- Vamp -->
+<script src="{% static 'vendors/vmap/jquery.vmap' %}.min.js"></script>
+<script src="{% static 'vendors/vmap/maps/jquery' %}.vmap.usa.js"></script>
+<script src="{% static 'js/examples/vmap' %}.js"></script>
+
+<!-- Dashboard scripts -->
+<script src="{% static 'js/examples/dashboard.js' %}"></script>
+<div class="colors"> <!-- To use theme colors with Javascript -->
+    <div class="bg-primary"></div>
+    <div class="bg-primary-bright"></div>
+    <div class="bg-secondary"></div>
+    <div class="bg-secondary-bright"></div>
+    <div class="bg-info"></div>
+    <div class="bg-info-bright"></div>
+    <div class="bg-success"></div>
+    <div class="bg-success-bright"></div>
+    <div class="bg-danger"></div>
+    <div class="bg-danger-bright"></div>
+    <div class="bg-warning"></div>
+    <div class="bg-warning-bright"></div>
+</div>
+
+<!-- App scripts -->
+<script src="{% static 'js/app.js' %}"></script>
+
+</body>
+</html>

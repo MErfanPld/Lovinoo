@@ -1,0 +1,124 @@
+{% with request.resolver_match.url_name as url_name %}
+
+
+    <div class="navigation">
+
+        <!-- begin::logo -->
+        <div id="logo">
+            <a href="index.html">
+                <img class="logo" src="assets/media/image/logo.png" alt="logo">
+                <img class="logo-sm" src="assets/media/image/logo-sm.png" alt="small logo">
+                <img class="logo-dark" src="assets/media/image/logo-dark.png" alt="dark logo">
+            </a>
+        </div>
+        <!-- end::logo -->
+
+        <!-- begin::navigation header -->
+        <header class="navigation-header">
+            <figure class="avatar avatar-state-success">
+                <img src="assets/media/image/user/man_avatar3.jpg" class="rounded-circle" alt="image">
+            </figure>
+            <div>
+                <h5>{{ request.user }}</h5>
+                <p class="text-muted line-height-20 m-b-25">مدیر</p>
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a href="profile.html" class="btn nav-link bg-info-bright" title="پروفایل"
+                           data-toggle="tooltip">
+                            <i data-feather="user"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="btn nav-link bg-success-bright" title="تنظیمات" data-toggle="tooltip">
+                            <i data-feather="settings"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url "accounts:logout" %}" class="btn nav-link bg-danger-bright" title="خروج"
+                           data-toggle="tooltip">
+                            <i data-feather="log-out"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <!-- end::navigation header -->
+
+        <!-- begin::navigation menu -->
+        <div class="navigation-menu-body">
+            <ul>
+                <li class="navigation-divider">اصلی</li>
+
+                <li>
+                    <a class="{% if url_name == 'panel' %}active{% endif %}" href="{% url "config:panel" %}">
+                        <i class="nav-link-icon" data-feather="bar-chart-2"></i>
+                        <span>داشبورد</span>
+                        <span class="badge badge-danger">2</span>
+                    </a>
+                </li>
+
+                <li class="{% if request.resolver_match.app_name == 'accounts' %}open{% endif %}">
+                    <a href="">
+                        <i class="nav-link-icon" data-feather="bar-chart-2"></i>
+                        <span>کاربران برنامه</span>
+                    </a>
+                    <ul>
+                        <li><a class="{% if url_name == 'user_list' %}active{% endif %}"
+                               href="{% url "accounts:user_list" %}">لیست </a></li>
+
+                    </ul>
+                </li>
+                <li class="{% if request.resolver_match.app_name == 'accounts' %}open{% endif %}">
+                    <a href="">
+                        <i class="nav-link-icon" data-feather="bar-chart-2"></i>
+                        <span>کاربران ادمین</span>
+                    </a>
+                    <ul>
+                        <li><a class="{% if url_name == 'admin_list' %}active{% endif %}"
+                               href="{% url "accounts:admin_list" %}">لیست </a></li>
+                        <li><a class="{% if url_name == 'admin_create' %}active{% endif %}"
+                               href="{% url "accounts:admin_create" %}">افزودن</a></li>
+                    </ul>
+                </li>
+
+                <li class="{% if request.resolver_match.app_name == 'financial' %}open{% endif %}">
+                    <a href="">
+                        <i class="nav-link-icon" data-feather="bar-chart-2"></i>
+                        <span>مالی</span>
+                    </a>
+                    <ul>
+                        <li><a class="{% if url_name == 'tariff_list' %}active{% endif %}"
+                               href="{% url "financial:tariff_list" %}">تعرفه ها</a></li>
+                        <li><a class="{% if url_name == 'origin_list' %}active{% endif %}"
+                               href="{% url "financial:origin_list" %}">شماره کارت ها</a></li>
+                        <li><a class="{% if url_name == 'pay_history' %}active{% endif %}"
+                               href="{% url "financial:pay_history" %}">پرداخنی ها</a></li>
+                        <li><a class="{% if url_name == 'cart_pay' %}active{% endif %}"
+                               href="{% url "financial:cart_pay" %}">کارت به کارت ها</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="{% if url_name == 'contact_list' %}active{% endif %}" href="{% url "config:contact_list" %}">
+                        <i class="nav-link-icon" data-feather="check-circle"></i>
+                        <span>Contact</span>
+                        <span class="badge badge-warning">2</span>
+                    </a>
+                </li>
+                <li class="{% if request.resolver_match.app_name == 'config' %}open{% endif %}">
+                    <a href="">
+                        <i class="nav-link-icon" data-feather="bar-chart-2"></i>
+                        <span>تنظیمات</span>
+                    </a>
+                    <ul>
+                        <li><a class="{% if url_name == 'rule' %}active{% endif %}"
+                               href="{% url "config:rule" %}">قوانین</a></li>
+                        <li><a class="{% if url_name == 'about_us' %}active{% endif %}"
+                               href="{% url "config:about_us" %}">درباره ما</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- end::navigation menu -->
+
+    </div>
+{% endwith %}

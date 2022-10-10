@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load humanize %}
+{% block content %}
+    <main class="main-content">
+
+        <div class="container">
+
+            <!-- begin::page-header -->
+            <div class="page-header">
+                <h1 class="text-center">پلن های اشتراکی</h1>
+                <nav aria-label="breadcrumb">
+                    <ol><a class="btn btn-danger" href="{% url "financial:tariff_create" %}">افزودن پلن جدید</a></ol>
+                </nav>
+            </div>
+            <!-- end::page-header -->
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h5></h5>
+                    <hr>
+                    <div class="card-columns">
+                        {% for tariff in tariff_list %}
+                            <div class="card  border border-success  text-center p-3">
+                                <blockquote class="blockquote mb-0 card-body">
+                                    <h1>{{ tariff.title }}</h1>
+                                    <p>هزینه اشتراک:{{ tariff.price | intcomma }}
+                                        تومان</p>
+                                    <p>مدت زمان :{{ tariff.time }}
+                                        ماه</p>
+                                <a  href="{% url "financial:tariff_delete" tariff.pk %}" class="btn btn-danger">حذف پلن</a>
+                                <a href="{% url "financial:tariff_update" tariff.pk %}" class="btn btn-warning">به روززسانی پلن</a>
+                                </blockquote>
+                            </div>
+                        {% empty %}
+                            <h1 class="text-center text-danger"> اشنراکی برای برنامه درنظر نگرفته اید</h1>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+    <!-- end::main content -->
+{% endblock content %}

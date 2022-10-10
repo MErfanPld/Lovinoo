@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block content %}
+    <main class="main-content">
+        <div class="container">
+
+            <!-- begin::page-header -->
+            <div class="page-header">
+                <h1 class="text-center">لیست کاربران ادمین</h1>
+            </div>
+            <!-- end::page-header -->
+
+            <div class="row">
+                <div class="col-md-12">
+
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-title">کاربران ادمین</h6>
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">شماره تماس</th>
+                                        <th scope="col">اخرین ورود</th>
+                                        <th scope="col">تنظیمات</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for admin in admin_list %}
+                                        <tr>
+                                            <th scope="row">{{ forloop.counter }}</th>
+                                            <td>{{ admin.phone_number }}</td>
+                                            <td> {% if admin.last_login %}
+                                                {{ admin.last_login }}
+                                            {% else %}
+                                                ---
+                                            {% endif %}
+                                            </td>
+                                            <td><a class="btn btn-danger" href="{% url "accounts:delete" admin.pk %}">حذف
+                                                ادمین</a></td>
+                                        </tr>
+                                    {% empty %}
+                                        <h1 class="text-center text-danger">ادمینی در سیستم ثبت نشده</h1>
+                                    {% endfor %}
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+{% endblock content %}
+
+

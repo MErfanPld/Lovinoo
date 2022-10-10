@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+    <main class="main-content">
+        <div class="container">
+
+            <!-- begin::page-header -->
+            <div class="page-header">
+                <h1 class="text-center">لیست کاربران کاربران</h1>
+            </div>
+            <!-- end::page-header -->
+
+            <div class="row">
+                <div class="col-md-12">
+
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-title">کاربران </h6>
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">شماره تماس</th>
+                                        <th scope="col">نام و نام خانوادگی</th>
+                                        <th scope="col">استان</th>
+                                        <th scope="col">سن</th>
+                                        <th scope="col">نمایش اطلاعات کامل</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for user in user_list %}
+                                        <tr>
+                                            <th scope="row">{{ forloop.counter }}</th>
+                                            <td>{{ user.phone_number }}</td>
+                                            <td>{{ user.profile.first_name }}-{{ user.profile.last_name }}</td>
+                                            <td>{{ user.profile.province }}</td>
+                                            <td>{{ user.profile.age }}</td>
+                                            <td><a class="btn btn-danger" href="{% url "accounts:user_detail" user.pk %}">
+                                               نمایش</a></td>
+                                        </tr>
+                                    {% empty %}
+                                        <h1 class="text-center text-danger">کاربری در سیستم ثبت نشده</h1>
+                                    {% endfor %}
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+{% endblock content %}
+
+

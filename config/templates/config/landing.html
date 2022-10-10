@@ -1,0 +1,824 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>لاوینو</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static "site/images/favicons/apple-touch-icon.png" %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static "site/images/favicons/favicon-32x32.png" %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static "site/images/favicons/favicon-16x16.png" %}">
+    <link rel="manifest" href="{% static "site/images/favicons/site.webmanifest" %}">
+
+    <link href="https://fonts.googleapis.com/css?family=Barlow:200,300,400,500,600,700,800,900&amp;display=swap"
+        rel="stylesheet">
+    <!-- plugin scripts -->
+    <link rel="stylesheet" type="text/css" href="{% static "site/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "site/css/animate.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "site/css/fontawesome-all.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "site/css/bootstrap-datepicker.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "site/css/bootstrap-select.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "site/css/jquery.mCustomScrollbar.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "site/css/owl.carousel.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "site/css/owl.theme..default.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "site/css/zimed-icon.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "site/css/jquery.bxslider.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "site/css/magnific-popup.css" %}">
+    <!-- template styles -->
+    <link rel="stylesheet" href="{% static "site/css/style.css" %}">
+    <link rel="stylesheet" href="{% static "site/css/rtl.css" %}">
+    <link rel="stylesheet" href="{% static "site/css/responsive.css" %}">
+
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div></div>
+            <div></div>
+        </div>
+    </div><!-- /.preloader -->
+    <div class="page-wrapper">
+
+        <header class="main-nav__header-one ">
+            <nav class="header-navigation stricky">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="main-nav__logo-box">
+                        <a href="index.html" class="main-nav__logo">
+                            <img src="{% static "site/images/logo-1-1.png" %}" width="105" alt="Awesome Image" />
+                        </a>
+                        <a href="#" class="side-menu__toggler"><i class="fa fa-bars"></i>
+                            <!-- /.smpl-icon-menu --></a>
+                    </div><!-- /.logo-box -->
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="main-nav__main-navigation">
+                        <ul class="one-page-scroll-menu main-nav__navigation-box">
+                            <li class="current scrollToLink">
+                                <a href="#banner">صفحه اصلی</a>
+                            </li>
+                            <li class="scrollToLink">
+                                <a href="#features">ویژگی ها</a>
+                            </li>
+                            <li class="scrollToLink">
+                                <a href="#pricing">مزایا و معایب</a>
+                            </li>
+                            <li class="scrollToLink">
+                                <a href="#app-shots">اسکرین شات</a>
+                            </li>
+                            <li class="scrollToLink">
+                                <a href="#testimonials">موارد</a>
+                            </li>
+
+                            <li class="scrollToLink">
+                                <a href="#question">سوالات رایج</a>
+                            </li>
+                            
+                            
+
+                            <li class="scrollToLink">
+                                <a href="#contact">تماس با ما</a>
+                            </li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                    <div class="main-nav__right">
+                        <a href="#contact" data-target="#contact" class="thm-btn header__btn scroll-to-target">
+                            دانلود رایگان</a><!-- /.thm-btn header__btn -->
+                    </div><!-- /.main-nav__right -->
+                </div>
+                <!-- /.container -->
+            </nav>
+        </header><!-- /.main-nav__header-one -->
+
+        <section class="banner-one" id="banner"
+            style="background-image: url({% static "site/images/background/banner-bg-1-1.png" %});">
+
+            <img src="{% static "site/images/shapes/banner-shapes-1-1.png" %}" alt="" class="banner-one__shape-1">
+            <img src="{% static "site/images/shapes/banner-shapes-1-2.png" %}" alt="" class="banner-one__shape-2">
+
+            <img src="{% static "site/images/shapes/banner-shapes-1-4.png" %}" alt="" class="banner-one__shape-4">
+            <img src="{% static "site/images/shapes/banner-shapes-1-5.png" %}" alt="" class="banner-one__shape-5">
+            <img src="{% static "site/images/shapes/banner-shapes-1-6.png" %}" alt="" class="banner-one__shape-6">
+            <img src="{% static "site/images/shapes/banner-shapes-1-7.png" %}" alt="" class="banner-one__shape-7">
+
+            <div class="container">
+                <img src="{% static "site/images/shapes/banner-shapes-1-3.png" %}" alt="" class="banner-one__shape-moc-1">
+                <img src="{% static "site/images/mocs/banner-moc-1-1.png" %}" alt="" class="banner-one__moc">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="banner-one__content">
+                            <p class="banner-one__tag-line">به لاوینو خوش آمدید <a href="#"></a></p>
+                            <h3 style="font-size: 48px;"> با لاوینو نیمه گمشده خود را پیدا کنید.</h3>
+                            <p>با عضویت در لاوینو می توانید افراد مختلف را ببینید، با آنها حرف بزنید و با آنها آشنا
+                                بشوید. اگر احساس تنهایی می کنید، به لاوینو بیایید و در هر نقطه ای از کشور که هستید
+                                دوستانی خوب پیدا کنید.</p>
+                            <a href="#contact" data-target="#contact"
+                                class="thm-btn banner-one__btn scroll-to-target">شروع کنید</a>
+                            <!-- /.thm-btn banner-one__btn -->
+                        </div><!-- /.banner-one__content -->
+                    </div><!-- /.col-lg-7 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.banner-one -->
+
+        <section class="service-one" id="features">
+            <div class="container">
+                <div class="block-title text-center">
+                   
+                    <h3 style="font-size: 38px;">چیزی که در لاوینو خواهید دید</h3>
+                </div><!-- /.block-title -->
+                <div class="row">
+                    <div class="service-one__col wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="000ms">
+                        <div class="service-one__single">
+                            <i class="zimed-icon-responsive"></i>
+                            <h3>ثبت نام رایگان</h3>
+                        </div><!-- /.service-one__single -->
+                    </div><!-- /.service-one__col -->
+                    <div class="service-one__col wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
+                        <div class="service-one__single">
+                            <i class="zimed-icon-computer-graphic"></i>
+                            <h3>دیدن تمام کاربران بدون محدودیت</h3>
+                        </div><!-- /.service-one__single -->
+                    </div><!-- /.service-one__col -->
+                    <div class="service-one__col wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">
+                        <div class="service-one__single">
+                            <i class="zimed-icon-development1"></i>
+                            <h3>پیدا کردن مورد مدنظر خود</h3>
+                        </div><!-- /.service-one__single -->
+                    </div><!-- /.service-one__col -->
+                    <div class="service-one__col wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="300ms">
+                        <div class="service-one__single">
+                            <i class="zimed-icon-development"></i>
+                            <h3>امنیت اطلاعات شخصی بالا</h3>
+                        </div><!-- /.service-one__single -->
+                    </div><!-- /.service-one__col -->
+                    <div class="service-one__col wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="400ms">
+                        <div class="service-one__single">
+                            <i class="zimed-icon-development"></i>
+                            <h3>بدون کاربران جعلی</h3>
+                        </div><!-- /.service-one__single -->
+                    </div><!-- /.service-one__col -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.service-one -->
+
+        <div class="cta-three">
+
+            <img src="{% static "site/images/shapes/cta-1-shape-2.png" %}" alt="" class="cta-three__shape-2">
+            <img src="{% static "site/images/shapes/cta-1-shape-3.png" %}" alt="" class="cta-three__shape-3">
+            <div class="container">
+                <img src="{% static "site/images/shapes/cta-1-shape-1.png" %}" alt="" class="cta-three__shape-1">
+                <img src="{% static "site/images/mocs/cta-moc-1-1.png" %}" alt="" class="cta-three__moc">
+                <div class="row justify-content-end">
+                    <div class="col-lg-6">
+                        <div class="cta-three__content">
+                            <div class="block-title text-right">
+                                <span class="block-title__bubbles"></span>
+                               
+                                <h3 style="font-size: 38px;">ویژگی های امنیتی بارز لاوینو در یک نگاه</h3>
+                            </div><!-- /.block-title -->
+                            <div class="cta-three__box-wrap">
+                                <div class="cta-three__box">
+                                    <div class="cta-three__box-icon">
+                                        <i class="zimed-icon-strategy"></i>
+                                    </div><!-- /.cta-three__box-icon -->
+                                    <div class="cta-three__box-content">
+                                        <h4>امنیت اطلاعات شخصی بالا </h4>
+                                        <p style="font-size: 12px;">لاوینو از شیوه های استاندارد برای حفاظت از اطلاعات کاربران استفاده می کند. اگر چه تمام تلاش ما حفظ حریم شخصی کاربران می باشد، اما ممکن است جهت انجام روند قضایی اطلاعات کاربران با دستور مراجع محترم قضایی در اختیار انها قرار بگیرد.</p>
+                                    </div><!-- /.cta-three__box-content -->
+                                </div><!-- /.cta-three__box -->
+                                <div class="cta-three__box">
+                                    <div class="cta-three__box-icon">
+                                        <i class="zimed-icon-training"></i>
+                                    </div><!-- /.cta-three__box-icon -->
+                                    <div class="cta-three__box-content">
+                                        <h4>کنترل رمز ورود </h4>
+                                        <p style="font-size: 12px;">شما مسئول نام کاربری و رمز ورود عضویت خود هستید. بنابراین رمز ورود هرگز نباید برای اشخاص ثالث فاش شوند.</p>
+                                    </div><!-- /.cta-three__box-content -->
+
+                                </div><!-- /.cta-three__box -->
+                            </div><!-- /.cta-three__box-wrap -->
+                           
+                            <!-- /.thm-btn cta-three__btn -->
+                        </div><!-- /.cta-three__content -->
+                    </div><!-- /.col-lg-6 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div><!-- /.cta-three -->
+
+        <section class="cta-two">
+            <img src="{% static "site/images/shapes/cta-2-shape-1.png" %}" alt="" class="cta-two__shape-1">
+            <img src="{% static "site/images/shapes/cta-2-shape-2.png" %}" alt="" class="cta-two__shape-2">
+            <div class="container">
+                <img src="{% static "site/images/shapes/cta-2-shape-3.png" %}" alt="" class="cta-two__shape-3">
+                <img src="{% static "site/images/mocs/cta-moc-2-1.png" %}" alt="" class="cta-two__moc">
+                <div class="row">
+                    <div class="col-xl-5 col-lg-6">
+                        <div class="cta-two__content">
+                            <div class="block-title text-right">
+                                <span class="block-title__bubbles"></span>
+                            
+                                <h3>ابزار قدرتمند لاوینو</h3>
+                            </div><!-- /.block-title -->
+                            <p>یکی از ابزارهای قدرتمند لاوینو سادگی کار با آن می باشد. یعنی شما پس از ثبت نام و عضویت در لاوینو ، می توانید با یک جستجوی ساده فرد موردنظر خود را پیدا کرده ، به او پیام دهید، با هم آشنا بشوید و نیمه گمشده خودتان را پیدا کنید. </p>
+                           
+                        </div><!-- /.cta-two__content -->
+                    </div><!-- /.col-lg-5 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.cta-two -->
+
+        <section class="video-one">
+            <div class="container">
+                <div class="video-one__box wow fadeInUp" data-wow-duration="1500ms">
+                    <img src="{% static "site/images/resources/video-1-1.jpg" %}" alt="">
+                    <div class="video-one__content">
+                        <a href="https://www.youtube.com/watch?v=aitb---aDYM" class="video-popup"><i
+                                class="fa fa-play"></i></a>
+                        <h3>فیلم ما را تماشا کنید</h3>
+                    </div><!-- /.video-one__content -->
+                </div><!-- /.video-one__box -->
+            </div><!-- /.container -->
+        </section><!-- /.video-one -->
+
+        <section class="funfact-one">
+            <img src="{% static "site/images/shapes/pricing-shape-1.png" %}" alt="" class="funfact-one__shape-1">
+            <img src="{% static "site/images/shapes/pricing-shape-2.png" %}" alt="" class="funfact-one__shape-2">
+            <img src="{% static "site/images/shapes/pricing-shape-3.png" %}" alt="" class="funfact-one__shape-3">
+
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="funfact-one__single">
+                            <h3 class="counter">7842</h3>
+                            <p>تعداد دانلودها </p>
+                        </div><!-- /.funfact-one__single -->
+                    </div><!-- /.col-lg-3 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="funfact-one__single">
+                            <h3 class="counter">6020</h3>
+                            <p>تعداد کاربران فعال</p>
+                        </div><!-- /.funfact-one__single -->
+                    </div><!-- /.col-lg-3 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="funfact-one__single">
+                            <h3 class="counter">360</h3>
+                            <p>امتیاز لاوینو از دید کاربران</p>
+                        </div><!-- /.funfact-one__single -->
+                    </div><!-- /.col-lg-3 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="funfact-one__single">
+                            <h3 class="counter">200</h3>
+                            <p>رضایت کاربران از لاوینو</p>
+                        </div><!-- /.funfact-one__single -->
+                    </div><!-- /.col-lg-3 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.funfact-one -->
+
+        <section class="pricing-one" id="pricing">
+            <div class="container">
+                <div class="pricing-one__sep"></div><!-- /.pricing-one__sep -->
+                <div class="block-title text-center">
+                    <span class="block-title__bubbles"></span>
+                    
+                    <h3>روابط مجازی، مزایا و معایب</h3>
+
+<div class="cta-two__content">
+    <div class="block-title text-right">
+        <span class="block-title__bubbles"></span>
+    
+    
+    </div><!-- /.block-title -->
+    <p>پیشرفت در فناوری و ظهور اینترنت تغییرات زیادی در مورد زندگی و نحوه ارتباط انسان ها ایجاد کرده است. ممکن است روزهای خوب گذشته را که مردم باید با یکدیگر ملاقات کنند ، به ملاقات می روند ، یک مکان را به اشتراک می گذارند ، در پارک دست می گیرند و گل می گیرند تا با یکدیگر رابطه داشته باشند ، از دست بدهند.
+        اوضاع به شدت تغییر کرده است. 
+        <br>
+        مردم اکنون وارد روابط مجازی می شوند.
+        عاشقان مجازی اطلاعات شخصی و صمیمی زیادی راجع به خودشان را برای نیمه دیگرشان فاش خواهند کرد.
+        مرحله آشنایی با یکدیگر در ارتباط مجازی احتمالاً خیلی سریعتر از یک قرار حضوری سنتی است.
+        <br>
+        اینکه آیا یک رابطه مجازی می تواند کارساز باشد یا نه موضوع بحث های زیادی بوده است و ما به شما این امکان را می‌دهیم که با ارائه مزایا و معایب روابط مجازی در این مورد قضاوت کنید.
+        </p>
+   
+</div>                          
+
+                    <p></p>
+
+                </div><!-- /.block-title -->
+               
+
+                <div class="tabed-content">
+                    <div id="month">
+                        <div class="row">
+                            <div class="col-lg-4 wow fadeInLeft" data-wow-duration="1500ms">
+                                <div class="pricing-one__single">
+                                    <div class="pricing-one__inner"  , style="height: 600px;">
+                                        <img src="{% static "site/images/shapes/pricing-line-1-1.png" %}" alt=""
+                                            class="pricing-one__line">
+                                        <img src="{% static "site/images/shapes/pricing-icon-1-1.png" %}" alt=""
+                                            class="pricing-one__icon">
+                                        <h3 style="font-size: 28px;">نکات مثبت روابط مجازی</h3>
+                                        <ul class="list-unstyled pricing-one__list">
+                                            
+                                            <li style="font-size: 16px;"><i class="fa fa-check"> </i> باعث صرفه جویی در زمان می شود</li>
+                                            <li style="font-size: 16px;"><i class="fa fa-check"> </i> کم یا بدون درگیری</li>
+                                            <li style="font-size: 16px;"><i class="fa fa-check"> </i> حفاظت از هویت</li>
+                                            <li style="font-size: 16px;"><i class="fa fa-check"> </i> صمیمیت کمتر</li>
+                                            <li style="font-size: 16px;"><i class="fa fa-check"> </i> بر افرادی که با آنها ارتباط دارید کنترل دارید</li>
+                                            <li style="font-size: 16px;"><i class="fa fa-check"> </i> مسیر خود را از طریق این آب های مجازی هدایت می کنید</li>
+
+                                        </ul><!-- /.list-unstyled pricing-one__list -->
+                                       
+                                    </div><!-- /.pricing-one__inner -->
+                                </div><!-- /.pricing-one__single -->
+                            </div><!-- /.col-lg-4 -->
+                            <div class="col-lg-4 wow fadeInUp" data-wow-duration="1500ms">
+                                <div class="pricing-one__single">
+                                    <div class="pricing-one__inner" , style="height: 600px;">
+                                        <img src="{% static "site/images/shapes/pricing-line-1-1.png" %}" alt=""
+                                            class="pricing-one__line">
+                                        <img src="{% static "site/images/shapes/pricing-icon-1-2.png" %}" alt=""
+                                            class="pricing-one__icon">
+                                        <h3 style="font-size: 28px;">معایب روابط مجازی</h3>
+                                        <ul class="list-unstyled pricing-one__list">
+                                            <li style="font-size: 16px;"><i class="fa fa-check"></i> جرایم سایبری</li>
+                                            <li style="font-size: 16px;"><i class="fa fa-check"></i> مشکل هویت</li>
+                                            <li style="font-size: 16px;"><i class="fa fa-check"></i> عدم حضور فیزیکی</li>
+                                            
+                                        </ul><!-- /.list-unstyled pricing-one__list -->
+                                       
+                                    </div><!-- /.pricing-one__inner -->
+                                </div><!-- /.pricing-one__single -->
+                            </div><!-- /.col-lg-4 -->
+                            
+                        </div><!-- /.row -->
+                    </div><!-- /#month -->
+                    
+            </div><!-- /.container -->
+        </section><!-- /.pricing-one -->
+
+        <section class="app-shot-one" id="app-shots">
+            <img src="{% static "site/images/shapes/contact-shape-3.png" %}" alt="" class="app-shot__shape-1">
+            <img src="{% static "site/images/shapes/contact-shape-2.png" %}" alt="" class="app-shot__shape-2">
+
+            <div class="container-fluid">
+                <div class="block-title text-center">
+                    <span class="block-title__bubbles"></span>
+                
+                    <h3>اسکرین شات های برنامه</h3>
+                </div><!-- /.block-title -->
+                <div class="app-shot-one__carousel thm__owl-carousel owl-theme owl-carousel"
+                    data-options='{ "loop": true, "margin": 43, "nav": false, "dots": true, "autoWidth": false, "autoplay": true, "smartSpeed": 700, "autoplayTimeout": 5000, "autoplayHoverPause": true, "slideBy": 5, "responsive": { "0": { "items": 1 }, "480": { "items": 2 }, "600": { "items": 3 }, "991": { "items": 4 }, "1000": { "items": 5 }, "1200": { "items": 5 } } }'>
+                    <div class="item">
+                        <img src="{% static "site/images/app-shots/app-shot-1-1.jpg" %}" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="{% static "site/images/app-shots/app-shot-1-2.jpg" %}" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="{% static "site/images/app-shots/app-shot-1-3.jpg" %}" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="{% static "site/images/app-shots/app-shot-1-4.jpg" %}" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="{% static "site/images/app-shots/app-shot-1-5.jpg" %}" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="{% static "site/images/app-shots/app-shot-1-1.jpg" %}" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="{% static "site/images/app-shots/app-shot-1-2.jpg" %}" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="{% static "site/images/app-shots/app-shot-1-3.jpg" %}" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="{% static "site/images/app-shots/app-shot-1-4.jpg" %}" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="{% static "site/images/app-shots/app-shot-1-5.jpg" %}" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="{% static "site/images/app-shots/app-shot-1-1.jpg" %}" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="{% static "site/images/app-shots/app-shot-1-2.jpg" %}" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="{% static "site/images/app-shots/app-shot-1-3.jpg" %}" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="{% static "site/images/app-shots/app-shot-1-4.jpg" %}" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="{% static "site/images/app-shots/app-shot-1-5.jpg" %}" alt="">
+                    </div><!-- /.item -->
+                </div><!-- /.app-shot-one__carousel owl-theme owl-carousel -->
+            </div><!-- /.container-fluid -->
+        </section><!-- /.app-shot-one -->
+
+        <section class="testimonials__one" id="testimonials">
+            <img src="{% static "site/images/shapes/map-1-1.png" %}" alt="Awesome Image" class="map-img" />
+            <img src="{% static "site/images/shapes/testi-shape-1.png" %}" alt="" class="testimonials__one-shape-1">
+            <img src="{% static "site/images/shapes/testi-shape-2.png" %}" alt="" class="testimonials__one-shape-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 d-flex">
+                        <div class="my-auto wow fadeInUp" data-wow-duration="2000ms">
+                            <div id="testimonials-slider-pager">
+                                <div class="testimonials-slider-pager-one">
+                                    <a href="#" class="pager-item active" data-slide-index="0"><img
+                                            src="{% static "site/images/testimonials/testi-1-1.jpg" %}" alt="Awesome Image" /></a>
+                                    <a href="#" class="pager-item" data-slide-index="1"><img
+                                            src="{% static "site/images/testimonials/testi-1-2.jpg" %}" alt="Awesome Image" /></a>
+                                    <a href="#" class="pager-item" data-slide-index="2"><img
+                                            src="{% static "site/images/testimonials/testi-1-3.jpg" %}" alt="Awesome Image" /></a>
+                                    <a href="#" class="pager-item" data-slide-index="3"><img
+                                            src="{% static "site/images/testimonials/testi-1-4.jpg" %}" alt="Awesome Image" /></a>
+                                    <a href="#" class="pager-item" data-slide-index="4"><img
+                                            src="{% static "site/images/testimonials/testi-1-5.jpg" %}" alt="Awesome Image" /></a>
+                                    <a href="#" class="pager-item" data-slide-index="5"><img
+                                            src="{% static "site/images/testimonials/testi-1-6.jpg" %}" alt="Awesome Image" /></a>
+                                </div><!-- /.testimonials-slider-pager-one -->
+                                <div class="testimonials-slider-pager-two">
+                                    <a href="#" class="pager-item active" data-slide-index="0"><img
+                                            src="{% static "site/images/testimonials/testi-1-1.jpg" %}" alt="Awesome Image" /></a>
+                                    <a href="#" class="pager-item" data-slide-index="1"><img
+                                            src="{% static "site/images/testimonials/testi-1-2.jpg" %}" alt="Awesome Image" /></a>
+                                    <a href="#" class="pager-item" data-slide-index="2"><img
+                                            src="{% static "site/images/testimonials/testi-1-3.jpg" %}" alt="Awesome Image" /></a>
+                                    <a href="#" class="pager-item" data-slide-index="3"><img
+                                            src="{% static "site/images/testimonials/testi-1-4.jpg" %}" alt="Awesome Image" /></a>
+                                    <a href="#" class="pager-item" data-slide-index="4"><img
+                                            src="{% static "site/images/testimonials/testi-1-5.jpg" %}" alt="Awesome Image" /></a>
+                                    <a href="#" class="pager-item" data-slide-index="5"><img
+                                            src="{% static "site/images/testimonials/testi-1-6.jpg" %}" alt="Awesome Image" /></a>
+                                </div><!-- /.testimonials-slider-pager-two -->
+                            </div><!-- /#testimonials-slider-pager -->
+                        </div><!-- /.my-auto -->
+                    </div><!-- /.col-lg-6 -->
+                    <div class="col-lg-6">
+                        <div class="block-title text-right">
+                            <span class="block-title__bubbles"></span>
+                            <h3>برخی موارد مهم</h3>
+                        </div><!-- /.block-title -->
+                        <ul class="slider testimonials-slider">
+                            <li class="slide-item">
+                                <div class="testimonials__one__single">
+                      
+                                    <h3>رابطه دوستی</h3>
+                                    <p>“هر دوست دنیایی را درون ما نشان می دهد، جهانی که احتمالاً تا رسیدن آن ها متولد نشده است و فقط با این ملاقات است که دنیای جدید متولد می شود.” (آناوس نین) 
+                                        <br>
+                                        دوستی می تواند موجب شادی، همراهی و رشد شود و در نهایت باعث غنی سازی کل تجربه ما از جهان می شود. اما این شادی و رشد در گرو داشتن روابط دوستانه سالم و مثبت است.</p>
+                      
+                                    </div><!-- /.testimonials__one__single -->
+                            </li>
+
+                            <li class="slide-item">
+                                <div class="testimonials__one__single">
+                               
+                                    <h3>دوستی قبل از ازدواج</h3>
+                                    <p>دوستی قبل از ازدواج می تواند میان هر جنسیتی بر قرار شود و منظور آن ارتباطی است که افراد به قصد ازدواج بر قرار می نمایند و قصدی جدی از این نوع دوستی در سر می پرورانند. 
+                                        <br>
+                                        مزایای دوستی پیش از ازدواج: آشنایی با خلق و خوی جنسیت متفاوت ، خود شناسی بیشتر در رابطه با جنس متفاوت ، درک این مسئله که فرد مورد نظر برای وی مناسب است یا خیر ، انتخاب با چشمی باز و با عقل و منطق</p>
+                      
+                                    
+                                </div><!-- /.testimonials__one__single -->
+                            </li>
+
+                            <li class="slide-item">
+                                <div class="testimonials__one__single">
+                                    
+                                    <h3>همسرداری </h3>
+                                    <p>چرا ازدواج می کنیم؟ زیرا در جستجوی همراهی مادام العمر هستیم که در کنار او بتوانیم زندگی خود را پر از عشق و خوشبختی کنیم. با این حال، برای داشتن زندگی مشترک شاد، پذیرش همسر خود همانطور که هست، ضروری است.
+                                        <br>
+                                        هر فردی اعتقادات، الگوهای تفکر، نظرات و دیدگاه های مختلفی دارد. بنابراین طبیعی است که هیچ دو نفر یکسان فکر نکنند. از این رو ، می توان گفت که ازدواج ادغام دو مجموعهٔ اعتقادی و ذهنی جداگانه است.
+
+                                </div><!-- /.testimonials__one__single -->
+                            </li>
+
+                            <li class="slide-item">
+                                <div class="testimonials__one__single">
+                                    
+                                    <h3>مدیریت رابطه عاطفی</h3>
+                                    <p>منشا اصلی بسیاری از شکست هایی که ما در روابط خود تجربه می کنیم، عدم توانایی ما در مدیریت رابطه عاطفی خود با شخص مقابل مان است. رابطه عاطفی انواع متفاوتی دارد که مدیریت اشتباه آن، به معنای بیش از حد یا کم داشتن احساسات و علاقه می تواند در داشتن رابطه سالم تاثیر گذار باشد.
+
+                                    
+                                </div><!-- /.testimonials__one__single -->
+                            </li>
+
+                            <li class="slide-item">
+                                <div class="testimonials__one__single">
+                                    
+                                    <h3>دوستی دختر و پسر</h3>
+                                    <p>هر انسانی ذاتا به جنس مخالف کشش دارد. در واقع همین عامل است که باعث بقا و ادامه نسل بشر بوده است.
+                                        <br>
+                                        زمانی که فرد با دیگران تعامل دارد، هورمونی در مغزش آزاد می شود که با بیشتر شدن این تعاملات و روابط، میزان آن هم بیشتر می شود. در واقع هم دختران و هم پسران چه از نظر روانی چه از نظر جسمی به هم کشش دارند. این موضوع درصورتی که تحت کنترل قرار نگیرد، می‌تواند دوستی و روابط دختر و پسر را تحت تاثیر قرار دهد.                    
+
+                                </div><!-- /.testimonials__one__single -->
+                            </li>
+
+                            <li class="slide-item">
+                                <div class="testimonials__one__single">
+                                    
+                                    <h3>سوالات آشنایی قبل از ازدواج </h3>
+                                    <p>ازدواج یک امر مقدس است که باعث پیوند دختر و پسر شده و شما می توانید با مطرح کردن سوالات آشنايي قبل از ازدواج، معیارها و ملاک های فردی که به ازدواج با شما علاقمند است را شناسایی کنید.
+                                         <br>
+                                         سوالات آشنايي قبل از ازدواج به شناخت دختر و پسر نسبت به هم کمک کرده و باعث خواهد شد تا نسبت به هم شناخت کافی داشته باشند. در ازدواج دختر و پسری که قبلا یکدیگر را نمی شناسند، با یکدیگر پیمان ازدواج می بندند، بنابراین با مطرح کردن سوالاتی می توانید طرف مقابل را به بهترین نحو ممکن بشناسید. هر چقدر که سوالات جامع باشد به همان اندازه یکدیگر را بهتر خواهید شناخت.
+
+                                </div><!-- /.testimonials__one__single -->
+                            </li>
+                        </ul>
+                    </div><!-- /.col-lg-6 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.testimonials__one -->
+
+        
+        <section class="faq-one" id="question">
+            <img src="{% static "site/images/shapes/faq-shape-1.png" %}" alt="" class="faq-one__shape-1">
+            <img src="{% static "site/images/shapes/faq-shape-2.png" %}" alt="" class="faq-one__shape-2">
+            <img src="{% static "site/images/shapes/faq-shape-3.png" %}" alt="" class="faq-one__shape-3">
+            <div class="container">
+                <div class="block-title text-center">
+                    <span class="block-title__bubbles"></span>
+                    <p>سوالات متداول</p>
+                    <h3>سوالی دارید؟</h3>
+                </div><!-- /.block-title -->
+                <div class="accrodion-grp wow fadeIn" data-wow-duration="1500ms" data-grp-name="faq-accrodion">
+                    <div class="accrodion active ">
+                        <div class="accrodion-inner">
+                            <div class="accrodion-title">
+                                <h4>آیا اطلاعات شخصی کاربران قابل افشا هستند؟</h4>
+                            </div>
+                            <div class="accrodion-content">
+                                <div class="inner">
+                                    <p>ما ممکن است هرگونه اطلاعات شخصی که شما در نرم افزار ما وارد می کنید، یا به روش های دیگری به ما ارائه می کنید، را جمع آوری و ذخیره کنیم. این شامل اطلاعات شناسایی شما، همچون نام، جنسیت، محل سکونت، سن و شماره همراه می باشد. لاوینو به منظور کاهش سوء استفاده از سرویس، فرآیند عضویت و فراهم آوردن داده هایی که به ما در حفظ و بهبود وب سایت کمک می کند به طور خودکار اطلاعات خاصی درباره ی هردوی مشترکین و غیر-مشترکین جمع آوری می کند. اطلاعاتی درباره ی نام دامنه های سرور اصلی، آدرس های ایمیل، شماره همراه حساب، نوع کامپیوتر و نوع مرورگر وب جمع آوری می شود. لاوینو فقط تحت شرایط زیر اطلاعات را برای شخص ثالث فاش می کند؛ رضایت شما برای افشای اطلاعات، اطلاعات به موسسات مالی به منظور تراکنش های پرداخت، اطلاعاتی که اطلاعات شناسایی شخصی را فاش نمی کند و اطلاعاتی که در دسترس عموم است. همچنین برای حفظ و نگهداری کسب و کار، ما حق فروش کسب و کار لاوینو را به طور کامل و برای همیشه برای خود محفوظ می داریم.</p>
+                                </div><!-- /.inner -->
+                            </div>
+                        </div><!-- /.accrodion-inner -->
+                    </div>
+                    <div class="accrodion  ">
+                        <div class="accrodion-inner">
+                            <div class="accrodion-title">
+                                <h4>امنیت اطلاعات مالی کاربران چگونه می باشد؟</h4>
+                            </div>
+                            <div class="accrodion-content">
+                                <div class="inner">
+                                    <p>لاوینو ممکن است به اطلاعات مالی یا بررسی جزئیات بیشتری، از جمله صورتحساب و کارت بانکی، نیاز داشته باشد. ما از این اطلاعات برای صورتحساب استفاده شما از سرویس هایمان، استفاده می کنیم. شما با خرید یا مشارکت در هرنوع فعالیت یا تراکنش نیازمند اطلاعات مالی در وب سایت، نرم افزار یا سرویس ما، رضایت خود را با ارائه اطلاعات مالی تان به سرویس دهندگان و اشخاص ثالث تعیین شده از طرف ما و صادر کننده کارت بانکی تان که برای اهدافشان در پردازش و پشتیبانی فعالیت ها و تراکنش هایتان ضروری است، رضایت می دهید. این اشخاص ثالث ممکن است شامل شرکت های ارائه دهنده خدمات پرداخت الکترونیک، درگاه های واسط اینترنتی و موسسات بانکی باشند که برای پردازش و پشتیبانی تراکنش ها یا اقدامات، از این اطلاعات استفاده می کنند. هر یک از این اشخاص ثالث ممکن است مجاز به استفاده از اطلاعات مالی شما، مطابق قراردادهای ما با آنها و مطابق با سیاست های حفظ حریم خصوصی شان باشند که ما هیچ کنترلی بر آن نداریم و شما موافقت می کنید که لاوینو مسئول یا عهده دار هیچ یک از اقدامات یا غفلت هایشان نیست.</p>
+                                </div><!-- /.inner -->
+                            </div>
+                        </div><!-- /.accrodion-inner -->
+                    </div>
+                    <div class="accrodion ">
+                        <div class="accrodion-inner">
+                            <div class="accrodion-title">
+                                <h4>آیا لاوینو دارای کاربران جعلی می باشد؟</h4>
+                            </div>
+                            <div class="accrodion-content">
+                                <div class="inner">
+                                    <p>مجموعه لاوینو تلاش دارد که با اعمال سختگیرانه ترین سیستم تشخیص کاربران، از ورود هر گونه کاربر جعلی و فیک به لاوینو جلوگیری نماید تا کاربران محترم لحظات خوشی را در لاوینو تجربه نمایند.</p>
+                                </div><!-- /.inner -->
+                            </div>
+                        </div><!-- /.accrodion-inner -->
+                    </div>
+                    <div class="accrodion ">
+                        <div class="accrodion-inner">
+                            <div class="accrodion-title">
+                                <h4>کنترل رمز ورود چگونه می باشد؟</h4>
+                            </div>
+                            <div class="accrodion-content">
+                                <div class="inner">
+                                    <p>شما مسئول نام کاربری (شماره همراه / ایمیل) و رمز ورود عضویت خود هستید. به همین دلیل، رمز ورودها هرگز نباید برای اشخاص ثالث فاش شوند. اگر تصمیم به اشتراک گذاری رمز ورودتان با هر شخص ثالثی گرفتید، مسئولیت هر اقدامی که با رمز ورود و عضویت شما صورت گیرد، با خود شما خواهد بود. علاوه بر این از واضح نبودن رمز ورودتان و تغییر مرتب آن اطمینان حاصل نمایید. اگر کنترل رمز ورودتان را از دست داده باشید، ممکن است کنترل قابل توجهی روی اطلاعات شناسایی شخصی تان را از دست داده باشید و ممکن است در معرض اقدامات الزام آور قانونی از طرف شما قرار بگیرد. بنابراین اگر به هر دلیلی رمز ورودتان به خطر افتاده است شما باید فورا رمز ورودتان را تغییر دهید..</p>
+                                </div><!-- /.inner -->
+                            </div>
+                        </div><!-- /.accrodion-inner -->
+                    </div>
+
+                    <div class="accrodion ">
+                        <div class="accrodion-inner">
+                            <div class="accrodion-title">
+                                <h4>چه کسانی اطلاعات پروفایل کاربران را خواهند دید؟</h4>
+                            </div>
+                            <div class="accrodion-content">
+                                <div class="inner">
+                                    <p>با توجه به ماهیت بسیاری از خدمات ارائه شده توسط لاوینو، برخی از اطلاعات شخصی شما در اختیار سایر اعضا قرار خواهد گرفت. به طور مثال اگر شما پروفایل تان را تکمیل کرده و نام و تاریخ تولدتان را پر کنید، این اطلاعات در دسترس سایر اعضایی که از این سرویس استفاده می کنند، قرار خواهد گرفت. شما با ارائه این نوع از اطلاعات پروفایل به ما، رضایت و موافقت خود را برای این قسم استفاده و افشای اطلاعات شخصی تان اعلام می دارید. اطلاعات شناسایی شما به هیچ وجه برای سایر اعضا فاش نخواهد شد. اینکه از طریق ارسال پیامی با استفاده از سرویس های ما، اقدام به فاش کردن برخی از اطلاعات شناسایی یا تماس تان مانند شماره همراه، آدرس ایمیل، آیدی شبکه های اجتماعی و غیره، به اعضا منتخب تان نمایید، کاملا بر عهده و مسئولیت شماست. ما مسئول و عهده دار افشای اطلاعات تماس / شناسایی توسط سایر اعضا / کاربران نیستیم.</p>
+                                </div><!-- /.inner -->
+                            </div>
+                        </div><!-- /.accrodion-inner -->
+                    </div>
+
+                </div>
+            </div><!-- /.container -->
+        </section><!-- /.faq-one -->
+
+
+        <section class="contact-one" id="contact">
+            <img src="{% static "site/images/shapes/contact-shape-1.png" %}" alt="" class="contact-one__shape-1">
+            <img src="{% static "site/images/shapes/contact-shape-2.png" %}" alt="" class="contact-one__shape-2">
+            <img src="{% static "site/images/shapes/contact-shape-3.png" %}" alt="" class="contact-one__shape-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="contact-one__content">
+                            <div class="contact-one__images">
+                                <img src="{% static "site/images/resources/contact-1.jpg" %}" class="wow fadeInUp"
+                                    data-wow-duration="1500ms" alt="">
+                                <img src="{% static "site/images/resources/contact-2.jpg" %}" class="wow fadeInUp"
+                                    data-wow-duration="1500ms" alt="">
+                            </div><!-- /.contact-one__images -->
+                            <div class="contact-one__infos">
+                                <div class="contact-one__infos-single">
+                                    <div class="contact-one__infos-icon">
+                                        <i class="zimed-icon-placeholder"></i>
+                                    </div><!-- /.contact-one__infos-icon -->
+                                    <div class="contact-one__infos-content">
+                                        <h3>آدرس</h3>
+                                        <p>ایران ، تهران</p>
+                                    </div><!-- /.contact-one__infos-content -->
+                                </div><!-- /.contact-one__infos-single -->
+                                <div class="contact-one__infos-single">
+                                    <div class="contact-one__infos-icon">
+                                        <i class="zimed-icon-message"></i>
+                                    </div><!-- /.contact-one__infos-icon -->
+                                    <div class="contact-one__infos-content">
+                                        <h3>ایمیل</h3>
+                                        <p><a href="»Lavinoo_Chat@gmail.com">Lavinoo_Chat@gmail.com</a></p>
+                                    </div><!-- /.contact-one__infos-content -->
+                                </div><!-- /.contact-one__infos-single -->
+                                <div class="contact-one__infos-single">
+                                    <div class="contact-one__infos-icon">
+                                        <i class="zimed-icon-phone-call"></i>
+                                    </div><!-- /.contact-one__infos-icon -->
+                                    <div class="contact-one__infos-content">
+                                        <h3>تلفن</h3>
+                                        <p>09390610801</a></p>
+                                    </div><!-- /.contact-one__infos-content -->
+                                </div><!-- /.contact-one__infos-single -->
+                            </div><!-- /.contact-one__infos -->
+                        </div><!-- /.contact-one__content -->
+                    </div><!-- /.col-lg-6 -->
+                    <div class="col-lg-6">
+                        <div class="contact-one__form-wrap">
+                            <div class="block-title">
+                                <span class="block-title__bubbles"></span>
+                                <p>همین حالا با ما در تماس باشید</p>
+                                <h3>یک پیام بنویسید</h3>
+                            </div><!-- /.block-title -->
+                            <form action="http://layerdrops.com/zimed/{% static "site/inc/sendemail.png" %}"
+                                class="contact-form-validated contact-one__form">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input type="text" name="name" placeholder="نام و نام خانوادگی">
+                                    </div><!-- /.col-md-6 -->
+                                    <div class="col-md-6">
+                                        <input type="text" name="email" placeholder="ایمیل">
+                                    </div><!-- /.col-md-6 -->
+                                    <div class="col-md-6">
+                                        <input type="text" name="subject" placeholder="موضوع">
+                                    </div><!-- /.col-md-6 -->
+                                    <div class="col-md-6">
+                                        <select name="discuss" class="selectpicker">
+                                            <option value="">بحث و گفتگو</option>
+                                            <option value="">امتحان رایگان</option>
+                                            <option value="">بیزینس</option>
+                                        </select>
+                                    </div><!-- /.col-md-6 -->
+                                    <div class="col-md-12">
+                                        <textarea name="message" placeholder="پیام"></textarea>
+                                        <button type="submit" class="thm-btn contact-one__form-btn">ارسال</button>
+                                    </div><!-- /.col-md-12 -->
+                                </div><!-- /.row -->
+                            </form><!-- /.contact-one__form -->
+                            <div class="result"></div><!-- /.result -->
+                        </div><!-- /.contact-one__form-wrap -->
+                    </div><!-- /.col-lg-6 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.contact-one -->
+
+        <section class="cta-one">
+            <div class="container">
+                <div class="cta-one__circle-1"></div><!-- /.cta-one__circle-1 -->
+                <div class="cta-one__circle-2"></div><!-- /.cta-one__circle-2 -->
+                <div class="cta-one__circle-3"></div><!-- /.cta-one__circle-3 -->
+                <div class="cta-one__content text-center">
+                    <h3>امروز برنامه ی ما را دانلود کنید <br> دوستان جدیدی پیدا کنید</h3>
+                    
+                    <a href="#" class="thm-btn cta-one__btn">برنا مه ی ما را دانلود کنید</a>
+                    <!-- /.thm-btn cta-one__btn -->
+                </div><!-- /.cta-one__content -->
+            </div><!-- /.container -->
+        </section><!-- /.cta-one -->
+
+        <footer class="site-footer">
+            <img src="{% static "site/images/shapes/footer-shape-1.png" %}" class="site-footer__shape-1" alt="">
+            <img src="{% static "site/images/shapes/footer-shape-2.png" %}" class="site-footer__shape-2" alt="">
+            <img src="{% static "site/images/shapes/footer-shape-3.png" %}" class="site-footer__shape-3" alt="">
+            <div class="site-footer__upper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="footer-widget footer-widget__about">
+                                <a class="footer-widget__logo" href="index.html"><img src="{% static "site/images/logo-1-1.png" %}                                        width="105" alt="Awesome Image" /></a>
+                                <p>تیم لاوینو تمام تلاش خود را بکار بسته که یک بستر سالم ایجاد نماید تا کاربران محترم بتوانند لحظاتی خوشی را در کنار دوستان جدید خود بگذرانند.
+                                 </p>
+                                <p><a href="mailto:Lavinoo_Chat@gmail.com">Lavinoo_Chat@gmail.com</a> <br />
+                                    09390610801</p>
+                            </div><!-- /.footer-widget -->
+                        </div><!-- /.col-lg-4 -->
+                        <div class="col-lg-4">
+                            <div class="footer-widget footer-widget__links">
+                                <h3 class="footer-widget__title">دسترسی به سایت</h3>
+                                <div class="footer-widget__links-wrap">
+                                    <ul class="list-unstyled">
+                                        <li><a href="#features">ویژگی ها</a></li>
+                                        <li><a href="#pricing">مزایا و معایب</a></li>
+                                        <li><a href="#app-shots">اسکرین شات</a></li>
+                                        <li><a href="#testimonials">موارد</a></li>
+                                        <li><a href="#question">سوالات رایج</a></li>
+                                        <li><a href="#contact">تماس با ما</a></li>
+                                    </ul><!-- /.list-unstyled -->
+                                    
+                                </div><!-- /.footer-widget__links-wrap -->
+                            </div><!-- /.footer-widget footer-widget__links -->
+                        </div><!-- /.col-lg-4 -->
+                        <div class="col-lg-4">
+                            <div class="footer-widget footer-widget__subscribe">
+                                <h3 class="footer-widget__title">دانلود رایگان اپلیکیشن لاوینو</h3>
+                                <form class="footer-widget__mc-form mc-form" data-url="MAILCHIMP__POPUP__FORM__URL">
+                                    <button type="submit" class="thm-btn footer-widget__mc-btn">اکنون دانلود کنید</button>
+                                </form>
+                                <div class="mc-form__response"></div><!-- /.mc-form__response -->
+                            </div><!-- /.footer-widget footer-widget__subscribe -->
+                        </div><!-- /.col-lg-4 -->
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+            </div><!-- /.site-footer__upper -->
+            <div class="site-footer__bottom">
+                <div class="container">
+                    <div class="inner-container">
+                        <div class="site-footer__social">
+                           
+                        </div><!-- /.site-footer__social -->
+                        <p>تمامی حقوق برای مجموعه لاوینو محفوظ است.</p>
+                    </div><!-- /.inner-container -->
+                </div><!-- /.container -->
+            </div><!-- /.site-footer__bottom -->
+        </footer><!-- /.site-footer -->
+
+    </div><!-- /.page-wrapper -->
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+
+
+
+    <div class="side-menu__block">
+
+
+        <div class="side-menu__block-overlay custom-cursor__overlay">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div><!-- /.side-menu__block-overlay -->
+        <div class="side-menu__block-inner ">
+            <div class="side-menu__top justify-content-end">
+
+                <a href="#" class="side-menu__toggler side-menu__close-btn"><img
+                        src="{% static "site/images/shapes/close" %}-1-1.png" alt=""></a>
+            </div><!-- /.side-menu__top -->
+
+
+            <nav class="mobile-nav__container">
+                <!-- content is loading via js -->
+            </nav>
+            <div class="side-menu__sep"></div><!-- /.side-menu__sep -->
+            <div class="side-menu__content">
+                
+            </div><!-- /.side-menu__content -->
+        </div><!-- /.side-menu__block-inner -->
+    </div><!-- /.side-menu__block -->
+
+
+    <script src="{% static "site/js/jquery.min.js" %}"></script>
+    <script src="{% static "site/js/bootstrap.bundle.min.js" %}"></script>
+    <script src="{% static "site/js/TweenMax.min.js" %}"></script>
+    <script src="{% static "site/js/jquery.mCustomScrollbar.concat.min.js" %}"></script>
+    <script src="{% static "site/js/bootstrap-datepicker.min.js" %}"></script>
+    <script src="{% static "site/js/jquery.easing.min.js" %}"></script>
+    <script src="{% static "site/js/bootstrap-select.min.js" %}"></script>
+    <script src="{% static "site/js/jquery.validate.min.js" %}"></script>
+    <script src="{% static "site/js/waypoints.min.js" %}"></script>
+    <script src="{% static "site/js/wow.js" %}"></script>
+    <script src="{% static "site/js/jquery.counterup.min.js" %}"></script>
+    <script src="{% static "site/js/owl.carousel.min.js" %}"></script>
+    <script src="{% static "site/js/jquery.bxslider.min.js" %}"></script>
+    <script src="{% static "site/js/jquery.magnific-popup.min.js" %}"></script>
+    <script src="{% static "site/js/jquery.ajaxchimp.min.js" %}"></script>
+    <!-- template scripts -->
+    <script src="{% static "site/js/theme.js" %}"></script>
+</body>
+
+</html>

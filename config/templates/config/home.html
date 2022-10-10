@@ -1,0 +1,229 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+    <div class="main-content">
+
+        <!-- begin::container -->
+        <div class="container">
+
+            <div class="page-header">
+                <h1 class="young-passion-gradient text-center">LOVINO</h1>
+                <small class="">خوش آمدید، <span class="text-primary">جان اسنو</span></small>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div class="row">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="card-title mb-md-4 mb-lg-2">تعداد کاربران برنامه</h6>
+                                    <div class="text-center">
+                                        <div class="mb-2">
+                                            <span class="bar-1">2,5,9,6,5,2,4,3,7,5</span>
+                                        </div>
+                                        <div class="font-size-30 mb-1 font-weight-bold text-primary">{{ user_count | intcomma }}</div>
+                                        <p class="mb-0 text-muted">
+                                            <i class="text-primary m-r-5"></i>نفر
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="card-title mb-md-4 mb-lg-3">تعداد کاربران ادمین</h6>
+                                    <div class="text-center">
+                                        <div class="mb-2">
+                                            <span class="bar-3">2,5,9,6,5,2,4,3,7,5</span>
+                                        </div>
+                                        <div class="font-size-30 mb-1 font-weight-bold text-success">{{ admin_count | intcomma }}</div>
+                                        <p class="mb-0 text-muted">
+                                            <i class="text-danger m-r-5"></i> عدد
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="card-title mb-md-4 mb-lg-3">تعداد کاربران گزارش شده</h6>
+                                    <div class="text-center">
+                                        <div class="mb-2">
+                                            <span class="bar-4">2,5,9,6,5,2,4,3,7,5</span>
+                                        </div>
+                                        <div class="font-size-30 mb-1 font-weight-bold text-danger">{{ reported_count | intcomma }}</div>
+                                        <p class="mb-0 text-muted">
+                                            <i class="text-danger m-r-5"></i>نفر
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="card-title mb-md-4 mb-lg-3">پلن های اشتراک</h6>
+                                    <div class="text-center">
+                                        <div class="mb-2">
+                                            <span class="bar-1">2,5,9,6,5,2,4,3,7,5</span>
+                                        </div>
+                                        <div class="font-size-30 mb-1 font-weight-bold text-primary">{{ tariff_count | intcomma }}</div>
+                                        <p class="mb-0 text-muted">
+                                            <i class="text-primary m-r-5"></i> عدد
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="card-title mb-md-4 mb-lg-3">شماره کارت ها</h6>
+                                    <div class="text-center">
+                                        <div class="mb-2">
+                                            <span class="bar-3">2,5,9,6,5,2,4,3,7,5</span>
+                                        </div>
+                                        <div class="font-size-30 mb-1 font-weight-bold text-success">{{ origin_cart_count | intcomma }}</div>
+                                        <p class="mb-0 text-muted">
+                                            <i class="text-success m-r-5"></i> عدد
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="card-title mb-md-4 mb-lg-3">پرداختی ها</h6>
+                                    <div class="text-center">
+                                        <div class="mb-2">
+                                            <span class="bar-4">2,5,9,6,5,2,4,3,7,5</span>
+                                        </div>
+                                        <div class="font-size-30 mb-1 font-weight-bold text-danger">{{ pay_count | intcomma }}</div>
+                                        <p class="mb-0 text-muted">
+                                            <i class="text-danger m-r-5"></i> عدد
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="card-title mb-md-4 mb-lg-3">کارت به کارت های موفق</h6>
+                                    <div class="text-center">
+                                        <div class="mb-2">
+                                            <span class="bar-1">2,5,9,6,5,2,4,3,7,5</span>
+                                        </div>
+                                        <div class="font-size-30 mb-1 font-weight-bold text-primary">{{ cart_pay_count | intcomma }}</div>
+                                        <p class="mb-0 text-muted">
+                                            <i class="text-primary m-r-5"></i> عدد
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="card-title mb-md-4 mb-lg-3">مجموع پرداختی کاربران</h6>
+                                    <div class="text-center">
+                                        <div class="mb-2">
+                                            <span class="bar-3">2,5,9,6,5,2,4,3,7,5</span>
+                                        </div>
+                                        <div class="font-size-30 mb-1 font-weight-bold text-success">{{ total_pay | intcomma }}</div>
+                                        <p class="mb-0 text-muted">
+                                            <i class="text-success m-r-5"></i>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="card-title mb-md-4 mb-lg-3">پیام های دریافتی</h6>
+                                    <div class="text-center">
+                                        <div class="mb-2">
+                                            <span class="bar-4">2,5,9,6,5,2,4,3,7,5</span>
+                                        </div>
+                                        <div class="font-size-30 mb-1 font-weight-bold text-danger">{{ contact_count| intcomma }}</div>
+                                        <p class="mb-0 text-muted">
+                                            <i class="text-danger m-r-5"></i> عدد
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+       <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="card-title mb-md-4 mb-lg-3">مجموع پیام های ارسالی کاربران</h6>
+                                    <div class="text-center">
+                                        <div class="mb-2">
+                                            <span class="bar-1">2,5,9,6,5,2,4,3,7,5</span>
+                                        </div>
+                                        <div class="font-size-30 mb-1 font-weight-bold text-primary">{{ message_count | intcomma }}</div>
+                                        <p class="mb-0 text-muted">
+                                            <i class="text-primary m-r-5"></i> عدد
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="card-title mb-md-4 mb-lg-3">مجموع چت ها</h6>
+                                    <div class="text-center">
+                                        <div class="mb-2">
+                                            <span class="bar-3">2,5,9,6,5,2,4,3,7,5</span>
+                                        </div>
+                                        <div class="font-size-30 mb-1 font-weight-bold text-success">{{ room_count | intcomma }}</div>
+                                        <p class="mb-0 text-muted">
+                                            <i class="text-success m-r-5"></i>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="card-title mb-md-4 mb-lg-3">  پیام های دریافتی خوانده نشده</h6>
+                                    <div class="text-center">
+                                        <div class="mb-2">
+                                            <span class="bar-4">2,5,9,6,5,2,4,3,7,5</span>
+                                        </div>
+                                        <div class="font-size-30 mb-1 font-weight-bold text-danger">{{ contact_count| intcomma }}</div>
+                                        <p class="mb-0 text-muted">
+                                            <i class="text-danger m-r-5"></i> عدد
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+        <!-- end::container -->
+
+    </div>
+{% endblock content %}
+{% block jsfile %}
+
+{% endblock jsfile %}

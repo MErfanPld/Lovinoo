@@ -1,0 +1,182 @@
+{% extends 'base1.html' %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+    <div class="main-content">
+
+        <!-- begin::container -->
+        <div class="container">
+
+            <div class="page-header">
+                <h4>داشبورد فروش</h4>
+                <small class="">خوش آمدید، <span class="text-primary">جان اسنو</span></small>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div class="row">
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="card-title mb-md-4 mb-lg-2">آگهی های امروز</h6>
+                                    <div class="text-center">
+                                        <div class="mb-2">
+                                            <span class="bar-1">2,5,9,6,5,2,4,3,7,5</span>
+                                        </div>
+                                        <div class="font-size-30 mb-1 font-weight-bold text-primary">{{ today_want_ad | intcomma }}</div>
+                                        <p class="mb-0 text-muted">
+                                            <i class="text-primary m-r-5"></i>عدد
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="card-title mb-md-4 mb-lg-2">آگهی های ماه</h6>
+                                    <div class="text-center">
+                                        <div class="mb-2">
+                                            <span class="bar-1">2,5,9,6,5,2,4,3,7,5</span>
+                                        </div>
+                                        <div class="font-size-30 mb-1 font-weight-bold text-primary">{{ month_want_ad | intcomma }}</div>
+                                        <p class="mb-0 text-muted">
+                                            <i class="text-primary m-r-5"></i>عدد
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="card-title mb-md-4 mb-lg-2">آگهی های سال</h6>
+                                    <div class="text-center">
+                                        <div class="mb-2">
+                                            <span class="bar-1">2,5,9,6,5,2,4,3,7,5</span>
+                                        </div>
+                                        <div class="font-size-30 mb-1 font-weight-bold text-primary">{{ year_want_ad | intcomma }}</div>
+                                        <p class="mb-0 text-muted">
+                                            <i class="text-primary m-r-5"></i>عدد
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="card-title mb-md-4 mb-lg-3">دسته بندی ها</h6>
+                                    <div class="text-center">
+                                        <div class="mb-2">
+                                            <span class="bar-3">2,5,9,6,5,2,4,3,7,5</span>
+                                        </div>
+                                        <div class="font-size-30 mb-1 font-weight-bold text-success">{{ category_count | intcomma }}</div>
+                                        <p class="mb-0 text-muted">
+                                            <i class="text-danger m-r-5"></i> عدد
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="card-title mb-md-4 mb-lg-3">دسته های اصلی</h6>
+                                    <div class="text-center">
+                                        <div class="mb-2">
+                                            <span class="bar-3">2,5,9,6,5,2,4,3,7,5</span>
+                                        </div>
+                                        <div class="font-size-30 mb-1 font-weight-bold text-success">{{ parent_category | intcomma }}</div>
+                                        <p class="mb-0 text-muted">
+                                            <i class="text-danger m-r-5"></i> عدد
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="card-title mb-md-4 mb-lg-3">زیر دسته ها</h6>
+                                    <div class="text-center">
+                                        <div class="mb-2">
+                                            <span class="bar-3">2,5,9,6,5,2,4,3,7,5</span>
+                                        </div>
+                                        <div class="font-size-30 mb-1 font-weight-bold text-success">{{ child_category | intcomma }}</div>
+                                        <p class="mb-0 text-muted">
+                                            <i class="text-danger m-r-5"></i> عدد
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="card-title mb-md-4 mb-lg-3">شهر با بیشترین آگهی</h6>
+                                    <div class="text-center">
+                                        <div class="mb-2">
+                                            <span class="bar-4">2,5,9,6,5,2,4,3,7,5</span>
+                                        </div>
+                                        <div class="font-size-30 mb-1 font-weight-bold text-danger">{{ top_city.city }}</div>
+                                        <p class="mb-0 text-muted">
+                                            <i class="text-danger m-r-5"></i>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="card-title mb-md-4 mb-lg-3">منطقه با بیشترین آگهی</h6>
+                                    <div class="text-center">
+                                        <div class="mb-2">
+                                            <span class="bar-4">2,5,9,6,5,2,4,3,7,5</span>
+                                        </div>
+                                        <div class="font-size-30 mb-1 font-weight-bold text-danger">{{ top_city.zone }}</div>
+                                        <p class="mb-0 text-muted">
+                                            <i class="text-danger m-r-5"></i>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="card-title mb-md-4 mb-lg-3">تاریخ با بیشترین آگهی</h6>
+                                    <div class="text-center">
+                                        <div class="mb-2">
+                                            <span class="bar-4">2,5,9,6,5,2,4,3,7,5</span>
+                                        </div>
+                                        <div class="font-size-30 mb-1 font-weight-bold text-danger">{{ top_date.created }}</div>
+                                        <p class="mb-0 text-muted">
+                                            <i class="text-danger m-r-5"></i>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+        <!-- end::container -->
+
+    </div>
+{% endblock content %}
