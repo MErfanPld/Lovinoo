@@ -129,10 +129,9 @@ class ProfileFilterApiView(generics.ListAPIView):
 
     def get_queryset(self):
         queryset = self.queryset
-        # queryset = queryset.exclude(gender=self.request.user.profile.gender)
-        # blocked_list = self.request.user.activity_block_from.all().values_list('to_user', flat=True)
-        # queryset =  queryset.exclude(Q(user_id__in=blocked_list) | Q(user=self.request.user))
-
+        queryset = queryset.exclude(gender=self.request.user.profile.gender)
+        blocked_list = self.request.user.activity_block_from.all().values_list('to_user', flat=True)
+        queryset =  queryset.exclude(Q(user_id__in=blocked_list) | Q(user=self.request.user))
         return ProfileFilters(data=self.request.GET, queryset=queryset).qs
 
     def list(self, request, *args, **kwargs):
