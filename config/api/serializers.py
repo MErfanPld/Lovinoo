@@ -1,35 +1,35 @@
 from django.utils.safestring import mark_safe
 from rest_framework import serializers
 
-from ..models import Contact,Rate
+from ..models import Contact, Rate, AboutUs, Rules, Privacy
 
 
-# class AboutUsSerializer(serializers.ModelSerializer):
-#     description = serializers.SerializerMethodField()
+class AboutUsSerializer(serializers.ModelSerializer):
+    description = serializers.SerializerMethodField()
 
-#     class Meta:
-#         model = AboutUs
-#         fields = (
-#             "title",
-#             "description",
-#         )
+    class Meta:
+        model = AboutUs
+        fields = (
+            "title",
+            "description",
+        )
 
-#     def get_description(self, obj):
-#         return mark_safe(obj.description)
+    def get_description(self, obj):
+        return mark_safe(obj.description)
 
 
-# class RulesSerializer(serializers.ModelSerializer):
-#     description = serializers.SerializerMethodField()
+class RulesSerializer(serializers.ModelSerializer):
+    description = serializers.SerializerMethodField()
 
-#     class Meta:
-#         model = Rules
-#         fields = (
-#             "title",
-#             "description",
-#         )
+    class Meta:
+        model = Rules
+        fields = (
+            "title",
+            "description",
+        )
 
-#     def get_description(self, obj):
-#         return mark_safe(obj.description)
+    def get_description(self, obj):
+        return mark_safe(obj.description)
 
 
 class ContactSerializer(serializers.ModelSerializer):
@@ -44,23 +44,21 @@ class ContactSerializer(serializers.ModelSerializer):
         read_only_fields = ("created",)
 
 
+class PrivacySerializer(serializers.ModelSerializer):
+    description = serializers.SerializerMethodField()
 
-# class PrivacySerializer(serializers.ModelSerializer):
-#     description = serializers.SerializerMethodField()
+    class Meta:
+        model = Privacy
+        fields = (
+            "title",
+            "description",
+        )
 
-#     class Meta:
-#         model = Privacy
-#         fields = (
-#             "title",
-#             "description",
-#         )
-
-#     def get_description(self, obj):
-#         return mark_safe(obj.description)
+    def get_description(self, obj):
+        return mark_safe(obj.description)
 
 
 class RateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Rate
         fields = ('number',)
-    

@@ -31,16 +31,31 @@ class SingletonModel(models.Model):
 #         return self.title
 
 
-# class Rules(ConfigBase):
-#     pass
+class Rules(models.Model):
+    title = models.CharField(max_length=125)
+    description = RichTextField()
+
+    def __str__(self):
+        return self.title
 
 
-# class AboutUs(ConfigBase):
-#     pass
+
+class AboutUs(models.Model):
+    title = models.CharField(max_length=125)
+    description = RichTextField()
+
+    def __str__(self):
+        return self.title
 
 
-# class Privacy(ConfigBase):
-#     pass
+
+class Privacy(models.Model):
+    title = models.CharField(max_length=125)
+    description = RichTextField()
+
+    def __str__(self):
+        return self.title
+
 
 
 class Contact(models.Model):

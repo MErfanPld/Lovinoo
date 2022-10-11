@@ -1,6 +1,11 @@
 from rest_framework import serializers
+from rest_framework.validators import UniqueValidator
+from django.conf import settings
 
-from ..models import Block, Favorite, ReportedUser
+from ..models import Block, Favorite, ReportedUser, Activity
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 
 class ReportedUserSerializers(serializers.ModelSerializer):
@@ -12,6 +17,17 @@ class ReportedUserSerializers(serializers.ModelSerializer):
             "to_user",
             "text",
         )
+
+    def validate(self, attrs):
+        if self.context['request'].user == attrs.get('to_user'):
+            raise serializers.ValidationError(
+                f"Users cannot Report themselves.")
+
+        if ReportedUser.objects.filter(to_user=attrs.get('to_user'), from_user=self.context['request'].user).exists():
+            raise serializers.ValidationError(
+                f"You have already reported this user")
+
+        return super().validate(attrs)
 
     # def get_reported_user(self,obj):
     #     if not  hasattr(obj,'id'):
@@ -25,6 +41,17 @@ class BlockCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Block
         fields = ("to_user",)
+
+    def validate(self, attrs):
+        if self.context['request'].user == attrs.get('to_user'):
+            raise serializers.ValidationError(
+                f"Users cannot Block themselves.")
+
+        if Block.objects.filter(to_user=attrs.get('to_user'), from_user=self.context['request'].user).exists():
+            raise serializers.ValidationError(
+                f"You have already blocked this user")
+
+        return super().validate(attrs)
 
 
 class FavoriteSerializer(serializers.ModelSerializer):
