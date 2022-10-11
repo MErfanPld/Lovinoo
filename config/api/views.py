@@ -3,8 +3,7 @@ from rest_framework.response import Response
 
 from utils.city import cities
 
-from ..models import Contact, Rate
-# from ..models import AboutUs, Contact, Rules, Privacy,Rate
+from ..models import AboutUs, Contact, Rules, Privacy,Rate
 from .serializers import ContactSerializer, RateSerializer
 
 # from .serializers import AboutUsSerializer, ContactSerializer, RulesSerializer, PrivacySerializer,RateSerializer

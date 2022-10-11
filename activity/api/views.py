@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from profiles.api.serializers import ProfileMainSerializer
 from profiles.models import Profile
 
-from ..models import Block, Favorite,Seen
+from ..models import Block, Favorite, Seen
 from .serializers import (BlockCreateSerializer, FavoriteSerializer,
                           ReportedUserSerializers)
 
@@ -165,13 +165,12 @@ class BlockRemoveApiView(generics.DestroyAPIView):
             }
         )
 
-      
-      
+
 class FavoriteMeListApiView(generics.GenericAPIView):
     serializer_class = ProfileMainSerializer
 
     def get(self, request, *args, **kwargs):
-        favorite_list = request.user.activity_favorite_to.all().values_list(
+        favorite_list = Favorite.objects.filter(from_user=request.user).values_list(
             "to_user", flat=True
         )
         favorite_profile = Profile.objects.filter(user_id__in=favorite_list)
@@ -182,11 +181,16 @@ class FavoriteMeListApiView(generics.GenericAPIView):
             "data": serializer.data,
         }
         return Response(data=data, status=status.HTTP_200_OK)
-      
+
+
 class SeenListApiView(generics.GenericAPIView):
     serializer_class = ProfileMainSerializer
 
     def get(self, request, *args, **kwargs):
-        serializer = self.serializer_class(instance=Seen.objects.filter(to_user=self.request.user), many=True).data
+        to_user_ids = Seen.objects.filter(to_user=self.request.user).values_list(
+            "to_user", flat=True
+        )
+        profile_ids = Profile.objects.filter(user_id__in=to_user_ids)
+        serializer = self.serializer_class(
+            instance=profile_ids, many=True).data
         return Response(data={"is_done": True, "message": "لیست کاربرانی که پروفایل منو دیدن", "data": serializer})
-      
