@@ -117,7 +117,7 @@ class VerifyPayView(GenericAPIView):
             if len(req.json()['errors']) == 0:
                 t_status = req.json()['data']['code']
                 if t_status == 100:
-                    HttpResponse("paid")
+                    return redirect('/paymentok')
                 elif t_status == 101:
                     return redirect('/paymentno')
                 else:
