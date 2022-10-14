@@ -46,6 +46,7 @@ class User(AbstractBaseUser, PermissionsMixin):
                 expire_time = expire_date.date() - today.date()
 
                 expire_date = expire_time.days
+                return expire_date
 
         return expire_date
 
