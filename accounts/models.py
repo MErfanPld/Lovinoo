@@ -40,13 +40,11 @@ class User(AbstractBaseUser, PermissionsMixin):
         if pay_history:
             tariff = Tariff.objects.filter(title=pay_history.tariff).first()
             if tariff:
-                expire_date = pay_history.date + \
-                    datetime.timedelta(days=tariff.time)
+                expire_date = pay_history.date + datetime.timedelta(days=tariff.time)
                 today = datetime.datetime.today()
                 expire_time = expire_date.date() - today.date()
 
                 expire_date = expire_time.days
-            return expire_date
 
         return expire_date
 
