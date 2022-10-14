@@ -3201,3 +3201,10 @@ Method Not Allowed: /accounts/api/auth/
 Not Found: /accounts/api/
 Method Not Allowed: /accounts/api/verify/
 Unauthorized: /profiles/api/
+Not Found: /tarrif_list
+Not Found: /favicon.ico
+Not Found: /panel/tarrif_list
+Not Found: /accounts
+Not Found: /accounts/profile/
+Not Found: /accounts/profile/
+Not Found: /accounts/

@@ -2,11 +2,13 @@ import json
 import requests
 
 from django.http import HttpResponse
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
 from rest_framework import status
 from rest_framework.generics import CreateAPIView, ListAPIView, GenericAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
+from django.views import View
+
 
 from ..models import CartPay, Tariff, PayHistory
 from .serializers import (CartPaySerializer, PayHistorySerializers,
@@ -44,7 +46,8 @@ class UserCartPayApiView(ListAPIView):
         return cart_pays
 
     def list(self, request, *args, **kwargs):
-        response = super(UserCartPayApiView, self).list(request, *args, **kwargs)
+        response = super(UserCartPayApiView, self).list(
+            request, *args, **kwargs)
         return Response({"is_done": True, "data": response.data})
 
 
@@ -108,19 +111,30 @@ class VerifyPayView(GenericAPIView):
                 "amount": pay_history_obj.price,
                 "authority": t_authority
             }
-            req = requests.post(url=ZP_API_VERIFY, data=json.dumps(req_data), headers=req_header)
+            req = requests.post(url=ZP_API_VERIFY, data=json.dumps(
+                req_data), headers=req_header)
             if len(req.json()['errors']) == 0:
                 t_status = req.json()['data']['code']
                 if t_status == 100:
                     HttpResponse("paid")
                 elif t_status == 101:
-                    return HttpResponse("paid")
+                    return redirect('/paymentno')
                 else:
                     PayHistory.objects.get(authority=t_authority).delete()
-                    return HttpResponse("inpaid")
+                    return redirect('/paymentok')
             else:
                 PayHistory.objects.get(authority=t_authority).delete()
-                return HttpResponse("inpaid")
+                return redirect('/paymentok')
         else:
             PayHistory.objects.get(authority=t_authority).delete()
-            return HttpResponse("inpaid")
+            return redirect('/paymentok')
+
+
+class Paymentok(View):
+    def get(request):
+        return render(request,'../templates/financial/paymentok.html')
+
+class Paymentno(View):
+    def get(request):
+        return render(request,'../templates/financial/paymentno.html')
+
