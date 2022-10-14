@@ -2,7 +2,7 @@ import json
 import requests
 from lovinoo.celery import app
 from django.http import HttpResponse
-from django.shortcuts import redirect
+from django.shortcuts import redirect , render
 from rest_framework import status
 from rest_framework.generics import CreateAPIView, ListAPIView, GenericAPIView
 from rest_framework.permissions import IsAuthenticated, AllowAny
