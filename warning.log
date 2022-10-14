@@ -3195,3 +3195,16 @@ Traceback (most recent call last):
   File "/home/ashkan/Desktop/Projects/Lovinoo-/.venv/lib/python3.8/site-packages/django/middleware/common.py", line 88, in get_full_path_with_slash
     raise RuntimeError(
 RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/chat/api/room/4/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+Not Found: /accounts/api/login/
+Not Found: /favicon.ico
+Method Not Allowed: /accounts/api/auth/
+Not Found: /accounts/api/
+Method Not Allowed: /accounts/api/verify/
+Unauthorized: /profiles/api/
+Not Found: /tarrif_list
+Not Found: /favicon.ico
+Not Found: /panel/tarrif_list
+Not Found: /accounts
+Not Found: /accounts/profile/
+Not Found: /accounts/profile/
+Not Found: /accounts/
