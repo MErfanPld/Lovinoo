@@ -10,9 +10,9 @@ from chat.models import Message, Room
 from financial.models import CartPay, OriginCart, PayHistory, Tariff
 from utils.mixins import AdminUserMixin
 
-# from .forms import AboutUsForm, RuleForm
+from .forms import AboutUsForm, RuleForm
 from .models import Contact
-# from .models import AboutUs, Contact, Rules
+from .models import AboutUs, Contact, Rules
 
 user = get_user_model()
 
