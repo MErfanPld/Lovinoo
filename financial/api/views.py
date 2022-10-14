@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from rest_framework import status
 from rest_framework.generics import CreateAPIView, ListAPIView, GenericAPIView
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated , AllowAny
 from rest_framework.response import Response
 from django.views import View
 
@@ -98,7 +98,7 @@ class CartPayView(GenericAPIView):
         return Response(data=context, status=status.HTTP_200_OK)
 
 
-class VerifyPayView(GenericAPIView):
+class VerifyPayView(AllowAny,GenericAPIView):
     def get(self, request):
         t_status = request.GET.get('Status')
         t_authority = request.GET['Authority']
