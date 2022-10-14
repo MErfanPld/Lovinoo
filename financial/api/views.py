@@ -132,10 +132,10 @@ class VerifyPayView(GenericAPIView):
 
 
 class Paymentok(View):
-    def get(request):
+    def get(self, request, *args, **kwargs):
         return render(request,'../templates/financial/paymentok.html')
 
 class Paymentno(View):
-    def get(request):
+    def get(self, request, *args, **kwargs):
         return render(request,'../templates/financial/paymentno.html')
 
