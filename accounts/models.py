@@ -1,3 +1,5 @@
+import datetime
+
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from django.db import models
 
@@ -29,6 +31,23 @@ class User(AbstractBaseUser, PermissionsMixin):
     @property
     def is_staff(self):
         return self.is_admin
+
+    def get_account_expire_days(self):
+        from financial.models import PayHistory, Tariff
+
+        expire_date = None
+        pay_history = PayHistory.objects.filter(user_id=self.id).first()
+        if pay_history:
+            tariff = Tariff.objects.filter(title=pay_history.tariff).first()
+            if tariff:
+                expire_date = pay_history.date + \
+                    datetime.timedelta(days=tariff.time)
+                today = datetime.datetime.today()
+                expire_time = expire_date.date() - today.date()
+
+                expire_date = expire_time.days
+
+        return expire_date
 
 
 class OtpCode(models.Model):
