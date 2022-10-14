@@ -117,18 +117,18 @@ class VerifyPayView(GenericAPIView):
             if len(req.json()['errors']) == 0:
                 t_status = req.json()['data']['code']
                 if t_status == 100:
-                    return redirect('/paymentok/')
+                    return redirect('/financial/api/paymentok/')
                 elif t_status == 101:
-                    return redirect('/paymentno/')
+                    return redirect('/financial/api/paymentno/')
                 else:
                     PayHistory.objects.get(authority=t_authority).delete()
-                    return redirect('/paymentok/')
+                    return redirect('/financial/api/paymentok/')
             else:
                 PayHistory.objects.get(authority=t_authority).delete()
-                return redirect('/paymentok/')
+                return redirect('/financial/api/paymentok/')
         else:
             PayHistory.objects.get(authority=t_authority).delete()
-            return redirect('/paymentok/')
+            return redirect('/financial/api/paymentok/')
 
 
 class Paymentok(View):
