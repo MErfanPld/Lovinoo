@@ -1,18 +1,33 @@
 import json
 import requests
-
+from lovinoo.celery import app
 from django.http import HttpResponse
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect
 from rest_framework import status
 from rest_framework.generics import CreateAPIView, ListAPIView, GenericAPIView
-from rest_framework.permissions import IsAuthenticated , AllowAny
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
-from django.views import View
-
 
 from ..models import CartPay, Tariff, PayHistory
 from .serializers import (CartPaySerializer, PayHistorySerializers,
                           TariffSerializer)
+from celery import shared_task
+
+
+@shared_task
+def connect_gateway(price, phone):
+    req_data = {
+        "merchant_id": MERCHANT,
+        "amount": price,
+        "callback_url": CallbackURL,
+        "description": description,
+        "metadata": {"mobile": phone}
+    }
+    req_header = {"accept": "application/json",
+                  "content-type": "application/json'"}
+    req = requests.post(url=ZP_API_REQUEST, data=json.dumps(
+        req_data), headers=req_header)
+    return req
 
 
 class TariffListApiView(ListAPIView):
@@ -76,17 +91,8 @@ class CartPayView(GenericAPIView):
 
     def get(self, request, *args, **kwargs):
         tariff_obj = Tariff.objects.get(id=kwargs.get('pk'))
-        req_data = {
-            "merchant_id": MERCHANT,
-            "amount": tariff_obj.price,
-            "callback_url": CallbackURL,
-            "description": description,
-            "metadata": {"mobile": request.user.phone_number}
-        }
-        req_header = {"accept": "application/json",
-                      "content-type": "application/json'"}
-        req = requests.post(url=ZP_API_REQUEST, data=json.dumps(
-            req_data), headers=req_header)
+        # req = connect_gateway.delay(tariff_obj.price, request.user.phone_number)
+        req = connect_gateway(tariff_obj.price, request.user.phone_number)
         authority = req.json()['data']['authority']
         PayHistory.objects.create(user=self.request.user, price=tariff_obj.price, tariff=tariff_obj.title,
                                   authority=authority)
@@ -132,6 +138,15 @@ class VerifyPayView(GenericAPIView):
 
 
 class Paymentok(View):
+
+    def get(request):
+        return render(request, '../templates/financial/paymentok.html')
+
+
+class Paymentno(View):
+    def get(request):
+        return render(request, '../templates/financial/paymentno.html')
+
     def get(self, request, *args, **kwargs):
         return render(request,'../templates/financial/paymentok.html')
 

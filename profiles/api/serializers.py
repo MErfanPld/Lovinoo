@@ -1,7 +1,11 @@
+import datetime
+from datetime import timedelta
+from dateutil.relativedelta import relativedelta
 from drf_extra_fields.fields import Base64ImageField
 from rest_framework import serializers
 
 from activity.models import Favorite
+from financial.models import PayHistory, Tariff
 from ..models import Image, Profile
 
 
@@ -99,10 +103,16 @@ class ProfileSerializer(serializers.ModelSerializer):
 
     def get_liked(self, obj):
         user = self.context['request'].user
-        favorite_obj = Favorite.objects.filter(from_user=user, to_user=obj.user)
+        favorite_obj = Favorite.objects.filter(
+            from_user=user, to_user=obj.user)
         if favorite_obj:
             return True
         return False
+
+    def to_representation(self, instance):
+        resp = super().to_representation(instance)
+        resp['expire_date'] = instance.user.get_account_expire_days()
+        return resp
 
 
 class ImageSerializer(serializers.Serializer):

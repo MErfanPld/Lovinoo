@@ -110,7 +110,8 @@ class ProfileListApiView(generics.ListAPIView):
             "to_user", flat=True
         )
         return Profile.objects.exclude(
-            Q(user_id__in=blocked_list) | Q(user=self.request.user) | Q(gender=self.request.user.profile.gender)
+            Q(user_id__in=blocked_list) | Q(user=self.request.user) | Q(
+                gender=self.request.user.profile.gender)
         )
 
     def list(self, request, *args, **kwargs):
@@ -130,12 +131,15 @@ class ProfileFilterApiView(generics.ListAPIView):
     def get_queryset(self):
         queryset = self.queryset
         queryset = queryset.exclude(gender=self.request.user.profile.gender)
-        blocked_list = self.request.user.activity_block_from.all().values_list('to_user', flat=True)
-        queryset =  queryset.exclude(Q(user_id__in=blocked_list) | Q(user=self.request.user))
+        blocked_list = self.request.user.activity_block_from.all(
+        ).values_list('to_user', flat=True)
+        queryset = queryset.exclude(
+            Q(user_id__in=blocked_list) | Q(user=self.request.user))
         return ProfileFilters(data=self.request.GET, queryset=queryset).qs
 
     def list(self, request, *args, **kwargs):
-        response = super(ProfileFilterApiView, self).list(request, *args, **kwargs)
+        response = super(ProfileFilterApiView, self).list(
+            request, *args, **kwargs)
         return Response(
             data={
                 "is_Done": True,
@@ -159,8 +163,9 @@ class ProfileSearchApiView(generics.ListAPIView):
             "to_user", flat=True
         )
         query = Profile.objects.exclude(
-            Q(user_id__in=blocked_list) | Q(user=self.request.user) | Q(gender=self.request.user.profile.gender)
-        )                                                                            
+            Q(user_id__in=blocked_list) | Q(user=self.request.user) | Q(
+                gender=self.request.user.profile.gender)
+        )
         return query.filter(
             user_name__contains=self.request.query_params.get("user_name")
         )
@@ -171,7 +176,7 @@ class ProfileSearchApiView(generics.ListAPIView):
             {"is_done": True, "message": "profile list", "data": response.data}
         )
 
-      
+
 class UserStatusApiView(generics.GenericAPIView):
 
     def get(self, request, *args, **kwargs):
@@ -182,22 +187,32 @@ class UserStatusApiView(generics.GenericAPIView):
             user_obj.status = 'آنلاین'
         user_obj.save()
         return Response(data={'is_done': True, 'message': str(user_obj.status)})
-      
-      
+
+
 class ProfileDetailApiView(generics.GenericAPIView):
     serializer_class = ProfileSerializer
 
     def get(self, request, *args, **kwargs):
-        user_id=kwargs.get("id")
-        profile_obj=Profile.objects.get(user_id=user_id)
+        user_id = kwargs.get("id")
+        profile_obj = Profile.objects.get(user_id=user_id)
         serializer = self.serializer_class(
             instance=profile_obj, context={"request": request}
         )
-        Seen.objects.create(from_user=self.request.user,to_user=user.objects.get(id=user_id))
+        Seen.objects.create(from_user=self.request.user,
+                            to_user=user.objects.get(id=user_id))
         context = {
             "is_done": True,
             "message": "اطاعات کاربر برای شما ارسال شد",
             "data": serializer.data,
         }
         return Response(data=context, status=status.HTTP_200_OK)
-      
+
+
+class ImageOrdering(generics.ListAPIView):
+    serializer_class = ProfileImageSerializer
+
+    def get_queryset(self):
+        image = Image.objects.all().order_by('-iamge')
+        return Response(data=image, status=status.HTTP_200_OK)
+
+        # return Image.objects.all().order_by('-iamge')
