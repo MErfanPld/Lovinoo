@@ -10,9 +10,9 @@ from chat.models import Message, Room
 from financial.models import CartPay, OriginCart, PayHistory, Tariff
 from utils.mixins import AdminUserMixin
 
-# from .forms import AboutUsForm, RuleForm
+from .forms import AboutUsForm, RuleForm
 from .models import Contact
-# from .models import AboutUs, Contact, Rules
+from .models import AboutUs, Contact, Rules
 
 user = get_user_model()
 
@@ -50,16 +50,16 @@ class PanelView(AdminUserMixin, View):
         return render(request, "config/home.html", context)
 
 
-# class AboutUsView(View):
-#     def get(self, request):
-#         about_us = AboutUs.load()
-#         return render(request, "config/about_us.html", {"about_us": about_us})
+class AboutUsView(View):
+    def get(self, request):
+        about_us = AboutUs.load()
+        return render(request, "config/about_us.html", {"about_us": about_us})
 
 
-# class RuleView(View):
-#     def get(self, request):
-#         about_us = Rules.load()
-#         return render(request, "config/rule.html", {"rule": about_us})
+class RuleView(View):
+    def get(self, request):
+        about_us = Rules.load()
+        return render(request, "config/rule.html", {"rule": about_us})
 
 
 class ContactListView(ListView):
@@ -72,18 +72,18 @@ class ContactDetailView(DetailView):
     template_name = "config/contact_detail.html"
 
 
-# class AboutUsCreateView(CreateView):
-#     model = AboutUs
-#     form_class = AboutUsForm
-#     template_name = "config/about_create.html"
-#     success_url = reverse_lazy("config:about_us")
+class AboutUsCreateView(CreateView):
+    model = AboutUs
+    form_class = AboutUsForm
+    template_name = "config/about_create.html"
+    success_url = reverse_lazy("config:about_us")
 
 
-# class RuleCreateView(CreateView):
-#     model = Rules
-#     form_class = RuleForm
-#     template_name = "config/rule_create.html"
-#     success_url = reverse_lazy("config:rule")
+class RuleCreateView(CreateView):
+    model = Rules
+    form_class = RuleForm
+    template_name = "config/rule_create.html"
+    success_url = reverse_lazy("config:rule")
 
 
 class StaticView(AdminUserMixin, View):

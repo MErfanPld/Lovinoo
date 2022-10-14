@@ -105,10 +105,7 @@ class CartPayView(GenericAPIView):
 
 
 class VerifyPayView(GenericAPIView):
-    permission_classes = [
-        AllowAny,
-    ]
-
+    permission_classes = [AllowAny, ]
     def get(self, request):
         t_status = request.GET.get('Status')
         t_authority = request.GET['Authority']
@@ -126,21 +123,22 @@ class VerifyPayView(GenericAPIView):
             if len(req.json()['errors']) == 0:
                 t_status = req.json()['data']['code']
                 if t_status == 100:
-                    HttpResponse("paid")
+                    return redirect('/financial/api/paymentok/')
                 elif t_status == 101:
-                    return redirect('/paymentno')
+                    return redirect('/financial/api/paymentno/')
                 else:
                     PayHistory.objects.get(authority=t_authority).delete()
-                    return redirect('/paymentok')
+                    return redirect('/financial/api/paymentok/')
             else:
                 PayHistory.objects.get(authority=t_authority).delete()
-                return redirect('/paymentok')
+                return redirect('/financial/api/paymentok/')
         else:
             PayHistory.objects.get(authority=t_authority).delete()
-            return redirect('/paymentok')
+            return redirect('/financial/api/paymentok/')
 
 
 class Paymentok(View):
+
     def get(request):
         return render(request, '../templates/financial/paymentok.html')
 
@@ -148,3 +146,11 @@ class Paymentok(View):
 class Paymentno(View):
     def get(request):
         return render(request, '../templates/financial/paymentno.html')
+
+    def get(self, request, *args, **kwargs):
+        return render(request,'../templates/financial/paymentok.html')
+
+class Paymentno(View):
+    def get(self, request, *args, **kwargs):
+        return render(request,'../templates/financial/paymentno.html')
+
