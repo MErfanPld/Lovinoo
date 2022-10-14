@@ -98,7 +98,8 @@ class CartPayView(GenericAPIView):
         return Response(data=context, status=status.HTTP_200_OK)
 
 
-class VerifyPayView(AllowAny,GenericAPIView):
+class VerifyPayView(GenericAPIView):
+    permission_classes = [AllowAny, ]
     def get(self, request):
         t_status = request.GET.get('Status')
         t_authority = request.GET['Authority']
