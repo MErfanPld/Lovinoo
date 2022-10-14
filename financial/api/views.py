@@ -7,7 +7,7 @@ from rest_framework import status
 from rest_framework.generics import CreateAPIView, ListAPIView, GenericAPIView
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
-
+from django.views.generic import View
 from ..models import CartPay, Tariff, PayHistory
 from .serializers import (CartPaySerializer, PayHistorySerializers,
                           TariffSerializer)
