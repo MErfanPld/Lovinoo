@@ -99,6 +99,7 @@ class CartPayView(GenericAPIView):
 
 
 class VerifyPayView(GenericAPIView):
+  permission_classes = []
     def get(self, request):
         t_status = request.GET.get('Status')
         t_authority = request.GET['Authority']
