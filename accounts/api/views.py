@@ -90,7 +90,8 @@ class VerifyApiView(generics.GenericAPIView):
                     }
                     return Response(data=context, status=status.HTTP_200_OK)
                 except user.DoesNotExist:
-                    user_obj = user.objects.create_user(phone_number=phone_number)
+                    fcm_token = serializer.validated_data["fcm_token"]
+                    user_obj = user.objects.create_user(phone_number=phone_number,fcm_token=fcm_token)
                     token_obj = Token.objects.create(user=user_obj)
                     context = {
                         "is_done": True,
