@@ -219,4 +219,4 @@ class UserRoomSerializer(serializers.ModelSerializer):
         rep['messages_count'] = instance.messages.count()
         rep['participants'] = self.check_participants_blocked(
             rep['participants'])
-        return
+        return rep
