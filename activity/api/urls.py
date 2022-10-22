@@ -3,7 +3,7 @@ from django.urls import path
 from .views import (BlockCreateApiView, BlockListApiView, BlockRemoveApiView,
                     FavoriteApiView, FavoriteListApiView,
                     RemoveFromFavoriteApiView, ReportCreateApiView,
-                    ReportListApiView,FavoriteMeListApiView,SeenListApiView)
+                    ReportListApiView, FavoriteMeListApiView, SeenListApiView, FavoriteFromApiView, FavoriteFromListApiView)
 
 urlpatterns = [
     path("reported_list/", ReportListApiView.as_view()),
@@ -15,6 +15,8 @@ urlpatterns = [
     path("favorite_remove/", RemoveFromFavoriteApiView.as_view()),
     path("favorite/", FavoriteApiView.as_view()),
     path("favorite_me/", FavoriteMeListApiView.as_view()),
-    path("seen_list/",SeenListApiView.as_view())
+    path("favorite/from/", FavoriteFromApiView.as_view()),
+    path("favorite_from/", FavoriteFromListApiView.as_view()),
+    path("seen_list/", SeenListApiView.as_view())
     # path("<int:pk>/", BlockRetravie.as_view())
 ]

@@ -90,6 +90,39 @@ class FavoriteApiView(generics.GenericAPIView):
         return Response(data=context, status=status.HTTP_400_BAD_REQUEST)
 
 
+class FavoriteFromApiView(generics.GenericAPIView):
+    serializer_class = FavoriteSerializer
+
+    def post(self, request, *args, **kwargs):
+        serializer = FavoriteSerializer(data=request.data)
+        if serializer.is_valid(raise_exception=True):
+            like_obj = Favorite.objects.filter(
+                from_user=request.user, from_user_id=serializer.validated_data["from_user"]
+            )
+            if like_obj.exists():
+                like_obj.delete()
+                context = {
+                    "is_done": True,
+                    "message": "با موفقیت از like ها حذف شد",
+                }
+            else:
+                serializer.save(from_user=request.user)
+                context = {
+                    "is_done": True,
+                    "message": "با موفقیت به like ها اضافه شد",
+                    "data": serializer.data,
+                }
+
+            return Response(data=context, status=status.HTTP_200_OK)
+        context = {
+            "is_done": False,
+            "message": "خطا در انجام عملیات",
+        }
+        return Response(data=context, status=status.HTTP_400_BAD_REQUEST)
+
+
+
+
 class RemoveFromFavoriteApiView(generics.GenericAPIView):
     serializer_class = FavoriteSerializer
 
@@ -181,6 +214,24 @@ class FavoriteMeListApiView(generics.GenericAPIView):
             "data": serializer.data,
         }
         return Response(data=data, status=status.HTTP_200_OK)
+
+
+class FavoriteFromListApiView(generics.GenericAPIView):
+    serializer_class = ProfileMainSerializer
+
+    def get(self, request, *args, **kwargs):
+        favorite_list = Favorite.objects.filter(from_user=request.user).values_list(
+            "from_user", flat=True
+        )
+        favorite_profile = Profile.objects.filter(user_id__in=favorite_list)
+        serializer = self.serializer_class(favorite_profile, many=True)
+        data = {
+            "is_done": True,
+            "message": "لیست کاربران مورد علاقه ",
+            "data": serializer.data,
+        }
+        return Response(data=data, status=status.HTTP_200_OK)
+
 
 
 class SeenListApiView(generics.GenericAPIView):
