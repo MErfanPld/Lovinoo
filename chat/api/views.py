@@ -43,16 +43,17 @@ class RoomCreateApiView(GenericAPIView):
 class RoomApiView(GenericAPIView):
     serializer_class = MessageSerializer
 
-
     def get(self, request, *args, **kwargs):
         room_id = kwargs.get("pk")
-        chat_list = Message.objects.filter(room_id=room_id).order_by("id")
+        chat_list = Message.objects.filter(
+            room_id=room_id).order_by("-timestamp")
         date_list = {}
         for item in chat_list:
             date_list[item.timestamp.strftime("%d-%b-%Y")] = []
             for message in chat_list:
                 if message.timestamp.strftime('%d-%b-%Y') == item.timestamp.strftime('%d-%b-%Y'):
-                    date_list[item.timestamp.strftime("%d-%b-%Y")].append(MessageSerializer(instance=Message.objects.get(id=message.id),context={"request":request}).data)
+                    date_list[item.timestamp.strftime("%d-%b-%Y")].append(MessageSerializer(
+                        instance=Message.objects.get(id=message.id), context={"request": request}).data)
         chat_list.exclude(author=request.user, read=False).update(read=True)
         context = {
             "is_done": True,
@@ -62,9 +63,11 @@ class RoomApiView(GenericAPIView):
         return Response(data=context, status=status.HTTP_200_OK)
 
     def post(self, request, *args, **kwargs):
-        serializer = self.serializer_class(data=request.data, context={"request": request})
+        serializer = self.serializer_class(
+            data=request.data, context={"request": request})
         if serializer.is_valid(raise_exception=True):
-            obj = serializer.save(room_id=kwargs.get("pk"), author=request.user)
+            obj = serializer.save(
+                room_id=kwargs.get("pk"), author=request.user)
             context = {
                 "is_done": True,
                 "message": "پبام با موفقیت ارسال شد",
@@ -114,7 +117,6 @@ class DeleteRoomApiView(GenericAPIView):
             return Response(data={"is_done": False, "message": e}, status=status.HTTP_400_BAD_REQUEST)
 
 
-
 class UserRoomApiView(ListAPIView):
     serializer_class = UserRoomSerializer
 
@@ -124,10 +126,10 @@ class UserRoomApiView(ListAPIView):
         return context
 
     def get_queryset(self):
-        user_chat_list = Room.objects.filter(participants__in=[self.request.user])
+        user_chat_list = Room.objects.filter(
+            participants__in=[self.request.user])
         chat_list_id = list(OrderedSet(
-            Message.objects.filter(room_id__in=user_chat_list).order_by('timestamp').values_list('room_id',
-                                                                                                  flat=True)))
+            Message.objects.filter(room_id__in=user_chat_list).order_by('timestamp').values_list('room_id', flat=True)))
         qs_sorted = list()
         for id in chat_list_id:
             qs_sorted.append(Room.objects.get(id=id))
@@ -138,7 +140,7 @@ class UserRoomApiView(ListAPIView):
         context = {"data": response.data, "message": "لیست چت های کاربر"}
         return Response(data=context, status=status.HTTP_200_OK)
 
-    
+
 class MessageDeleteView(GenericAPIView):
     serializer_class = MessageSerializer
 

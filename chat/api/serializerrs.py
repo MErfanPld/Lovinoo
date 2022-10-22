@@ -2,6 +2,7 @@ from django.contrib.auth import get_user_model
 from django.shortcuts import get_object_or_404
 from rest_framework import serializers
 
+from activity.models import Block
 from profiles.api.serializers import ProfileMainSerializer
 from ..models import Message, Room
 from ..utils import send_notification
@@ -167,28 +168,55 @@ class UserRoomSerializer(serializers.ModelSerializer):
     #             }
 
     def get_last_message(self, obj):
-        last_message=obj.messages.all().last()
+        last_message = obj.messages.all().last()
         if last_message.image:
-       
-           return "عکس"
+
+            return "عکس"
         elif last_message.voice:
-   
-           return "ویس"
-   
+
+            return "ویس"
+
         return last_message.body
 
     def get_partner_info(self, obj):
+        blocked_me_users = Block.objects.filter(to_user=self.context['request'].user)\
+            .values_list('from_user_id', flat=True)
+
         for user_obj in obj.participants.all():
             if user_obj.id != self.context['request'].user.id:
-                return ProfileMainSerializer(user_obj.profile, many=False).data
+                data = ProfileMainSerializer(
+                    many=False).to_representation(user_obj.profile)
+                if user_obj.id in blocked_me_users:
+                    data['is_blocked'] = True
+                else:
+                    data['is_blocked'] = False
+                return data
 
     def get_unread_message(self, obj):
         user = self.context['request'].user
-        Name=""
-        chat_messages = obj.messages.all().exclude(author=user).filter(read=False).count()
+        Name = ""
+        chat_messages = obj.messages.all().exclude(
+            author=user).filter(read=False).count()
         return chat_messages
 
+    def check_participants_blocked(self, participants):
+        blocked_me_users = Block.objects.filter(to_user=self.context['request'].user)\
+            .values_list('from_user_id', flat=True)
+        new_participants = []
 
+        for item in participants:
+            if item.get('id') in blocked_me_users:
+                item['is_blocked'] = True
+            else:
+                item['is_blocked'] = False
 
+            new_participants.append(item)
 
+        return new_participants
 
+    def to_representation(self, instance):
+        rep = super().to_representation(instance)
+        rep['messages_count'] = instance.messages.count()
+        rep['participants'] = self.check_participants_blocked(
+            rep['participants'])
+        return
